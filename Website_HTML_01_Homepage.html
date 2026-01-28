@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional personal assistance and licensed home health services in Arlington, TX. Compassionate care including skilled nursing, therapy, personal care, and companionship. Call (734) 560-1699.">
+    <meta name="keywords" content="home health Arlington TX, personal assistance services, skilled nursing, physical therapy, occupational therapy, speech therapy, home care Texas">
+    <title>Home Health & Personal Care Services Arlington TX | Global Health and Durables Services</title>
+    
+    <style>
+        /* CSS RESET & BASE STYLES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-navy: #1B4965;
+            --primary-teal: #3BA99C;
+            --accent-gold: #F4A259;
+            --light-gray: #F5F7FA;
+            --dark-gray: #333333;
+            --white: #FFFFFF;
+            --success-green: #5CB85C;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            font-size: 16px;
+        }
+        
+        /* HEADER STYLES */
+        .header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-top {
+            background: var(--primary-navy);
+            color: var(--white);
+            padding: 10px 0;
+            font-size: 14px;
+        }
+        
+        .header-top .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .contact-info {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .contact-info a {
+            color: var(--white);
+            text-decoration: none;
+        }
+        
+        .header-main {
+            padding: 15px 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-navy);
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-menu a {
+            color: var(--dark-gray);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--primary-teal);
+        }
+        
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-teal) 100%);
+            color: var(--white);
+            padding: 180px 20px 100px;
+            margin-top: 100px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 15px 35px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s;
+            display: inline-block;
+            border: 2px solid transparent;
+        }
+        
+        .btn-primary {
+            background: var(--accent-gold);
+            color: var(--white);
+        }
+        
+        .btn-primary:hover {
+            background: #E59348;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary-navy);
+        }
+        
+        /* SERVICES SECTION */
+        .services {
+            padding: 80px 20px;
+            background: var(--light-gray);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-header h2 {
+            font-size: 36px;
+            color: var(--primary-navy);
+            margin-bottom: 15px;
+        }
+        
+        .section-header p {
+            font-size: 18px;
+            color: var(--dark-gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .service-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            color: var(--primary-navy);
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+        
+        .service-card p {
+            color: var(--dark-gray);
+            line-height: 1.7;
+        }
+        
+        /* WHY CHOOSE US SECTION */
+        .why-choose {
+            padding: 80px 20px;
+            background: var(--white);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .feature {
+            text-align: center;
+        }
+        
+        .feature-icon {
+            font-size: 56px;
+            color: var(--primary-teal);
+            margin-bottom: 20px;
+        }
+        
+        .feature h3 {
+            color: var(--primary-navy);
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        
+        /* TESTIMONIALS */
+        .testimonials {
+            padding: 80px 20px;
+            background: var(--light-gray);
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .testimonial-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--dark-gray);
+            line-height: 1.7;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary-navy);
+        }
+        
+        /* CTA SECTION */
+        .cta-section {
+            background: var(--primary-teal);
+            color: var(--white);
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        
+        /* FOOTER */
+        .footer {
+            background: var(--primary-navy);
+            color: var(--white);
+            padding: 60px 20px 20px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer h3 {
+            margin-bottom: 20px;
+            color: var(--accent-gold);
+        }
+        
+        .footer ul {
+            list-style: none;
+        }
+        
+        .footer ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer a {
+            color: var(--white);
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            color: var(--accent-gold);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 20px;
+            text-align: center;
+        }
+        
+        /* HIPAA NOTICE */
+        .hipaa-notice {
+            background: #FFF3CD;
+            border-left: 4px solid var(--accent-gold);
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .nav-menu {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .section-header h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="contact-info">
+                    <a href="tel:7345601699">📞 (734) 560-1699</a>
+                    <a href="mailto:info@globalhealth.com">✉️ info@globalhealth.com</a>
+                </div>
+                <div>📍 Arlington, TX 76001</div>
+            </div>
+        </div>
+        
+        <div class="header-main">
+            <div class="container">
+                <nav class="nav-wrapper">
+                    <div class="logo">Global Health & Durables Services</div>
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <h1>Compassionate Home Health & Personal Care Services</h1>
+            <p>Professional skilled nursing, therapy services, and personal assistance delivered with dignity and excellence in Arlington, Texas and surrounding communities.</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn btn-primary">Request Free Consultation</a>
+                <a href="tel:7345601699" class="btn btn-secondary">Call (734) 560-1699</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES OVERVIEW -->
+    <section class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Comprehensive Services</h2>
+                <p>We provide both Licensed Home Health Services (LHHS) and Personal Assistance Services (PAS) tailored to your unique healthcare needs.</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Licensed Home Health Services -->
+                <div class="service-card">
+                    <div class="service-icon">🏥</div>
+                    <h3>Skilled Nursing Care</h3>
+                    <p>Professional RN and LVN services including wound care, medication management, IV therapy, chronic disease management, and post-surgical care in the comfort of your home.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🦵</div>
+                    <h3>Physical Therapy</h3>
+                    <p>Comprehensive rehabilitation services to restore mobility, strength, and function. Post-surgery recovery, fall prevention, pain management, and functional training.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">✋</div>
+                    <h3>Occupational Therapy</h3>
+                    <p>Help with daily living activities, adaptive equipment training, home safety assessments, and strategies to maintain independence in your daily routines.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">💬</div>
+                    <h3>Speech Therapy</h3>
+                    <p>Expert treatment for speech, language, and swallowing disorders. Communication rehabilitation, cognitive therapy, and dysphagia management.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🤝</div>
+                    <h3>Medical Social Services</h3>
+                    <p>Psychosocial assessments, counseling, community resource coordination, caregiver support, and assistance with healthcare decision-making.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">👤</div>
+                    <h3>Home Health Aides</h3>
+                    <p>Supervised personal care including bathing, dressing, mobility assistance, vital signs monitoring, and support with activities of daily living under RN direction.</p>
+                </div>
+
+                <!-- Personal Assistance Services -->
+                <div class="service-card">
+                    <div class="service-icon">❤️</div>
+                    <h3>Personal Care Assistance</h3>
+                    <p>Compassionate help with bathing, dressing, grooming, toileting, and mobility. Dignified support that respects your independence and preferences.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">👥</div>
+                    <h3>Companionship & Support</h3>
+                    <p>Friendly conversation, social engagement, emotional support, and meaningful activities to enhance quality of life and reduce isolation.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🧠</div>
+                    <h3>Alzheimer's & Dementia Care</h3>
+                    <p>Specialized, patient-centered care for individuals with memory challenges. Trained caregivers providing safe, structured, compassionate support.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🍽️</div>
+                    <h3>Meal Preparation & Nutrition</h3>
+                    <p>Nutritious meal planning and preparation, grocery shopping assistance, dietary accommodation, and support with eating and nutrition management.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3>Homemaking Services</h3>
+                    <p>Light housekeeping, laundry, organizing, and maintaining a clean, safe living environment to support comfort and independence at home.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">⏰</div>
+                    <h3>Respite Care</h3>
+                    <p>Temporary relief for family caregivers. Professional care allowing you to rest, attend to personal needs, or simply recharge while loved ones are safe.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="why-choose">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Families Trust Global Health & Durables Services</h2>
+                <p>Licensed, professional, and committed to excellence in every aspect of care</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">✓</div>
+                    <h3>Fully Licensed & Certified</h3>
+                    <p>Texas HHSC licensed for both LHHS and PAS. Medicare certified, insured, and compliant with all regulations.</p>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">👨‍⚕️</div>
+                    <h3>Expert Healthcare Professionals</h3>
+                    <p>Registered nurses, licensed therapists, and trained caregivers dedicated to providing superior care.</p>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">📋</div>
+                    <h3>Personalized Care Plans</h3>
+                    <p>Individualized assessment and customized care plans designed around your specific needs and goals.</p>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">🔒</div>
+                    <h3>HIPAA Compliant</h3>
+                    <p>Strict privacy and security protocols protecting your health information and maintaining confidentiality.</p>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">📞</div>
+                    <h3>24/7 Support Available</h3>
+                    <p>Round-the-clock access to our team for questions, concerns, or emergency support when you need it.</p>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">👨‍👩‍👧</div>
+                    <h3>Family Partnership</h3>
+                    <p>We keep families informed and involved, providing regular updates and welcoming your input in care decisions.</p>
+                </div>
+            </div>
+
+            <div class="hipaa-notice">
+                <strong>⚕️ HIPAA Privacy Notice:</strong> Global Health and Durables Services is committed to protecting your health information. We comply with all HIPAA regulations and maintain strict confidentiality of protected health information (PHI). Your privacy rights are respected and protected at all times. <a href="privacy.html">View our complete Privacy Policy</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Families Say</h2>
+                <p>Real experiences from clients and families we've served</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "The physical therapist from Global Health helped my mother regain her mobility after hip surgery. Professional, patient, and genuinely caring. We couldn't have asked for better care."
+                    </div>
+                    <div class="testimonial-author">— Sarah M., Arlington</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "After my father's stroke, the skilled nursing care and speech therapy he received at home made all the difference in his recovery. The team is exceptional."
+                    </div>
+                    <div class="testimonial-author">— James T., Grand Prairie</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "The Alzheimer's care provided by Global Health has been a blessing. Their caregiver is patient, understanding, and treats Dad with such dignity. Our family has peace of mind."
+                    </div>
+                    <div class="testimonial-author">— Linda K., Fort Worth</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Experience Exceptional Care?</h2>
+            <p>Contact us today for a free consultation. Let's discuss how we can help you or your loved one live comfortably and safely at home.</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn btn-primary">Request Free Consultation</a>
+                <a href="tel:7345601699" class="btn btn-secondary">Call (734) 560-1699</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3>Global Health & Durables Services</h3>
+                    <p>Professional home health and personal care services in Arlington, Texas and surrounding communities.</p>
+                    <br>
+                    <p><strong>Licensed by Texas HHSC</strong><br>
+                    License #: [Pending - Add when received]</p>
+                </div>
+
+                <div>
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="services.html#skilled-nursing">Skilled Nursing Care</a></li>
+                        <li><a href="services.html#physical-therapy">Physical Therapy</a></li>
+                        <li><a href="services.html#occupational-therapy">Occupational Therapy</a></li>
+                        <li><a href="services.html#speech-therapy">Speech Therapy</a></li>
+                        <li><a href="services.html#personal-care">Personal Care Assistance</a></li>
+                        <li><a href="services.html#companionship">Companionship Services</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">All Services</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>Contact Information</h3>
+                    <p><strong>Phone:</strong> (734) 560-1699</p>
+                    <p><strong>Email:</strong> info@globalhealth.com</p>
+                    <p><strong>Address:</strong><br>
+                    903 Telluride Drive<br>
+                    Arlington, TX 76001</p>
+                    <br>
+                    <p><strong>Office Hours:</strong><br>
+                    Monday-Friday: 8:00 AM - 6:00 PM<br>
+                    24/7 Care Available</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Global Health and Durables Services. All rights reserved.</p>
+                <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a> | <a href="hipaa.html">HIPAA Notice</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
