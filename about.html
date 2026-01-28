@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Global Home Health and Durable Services</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #FFFFFF;
+        }
+
+        /* Header Navigation */
+        header {
+            background: linear-gradient(135deg, #007BFF 0%, #0056b3 100%);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            height: 60px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .company-name {
+            color: #FFFFFF;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #FFD700;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: #FFFFFF;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero-about {
+            background: linear-gradient(rgba(0, 123, 255, 0.85), rgba(0, 86, 179, 0.85)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23007BFF" width="1200" height="600"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: #FFFFFF;
+            padding: 6rem 2rem 4rem;
+            text-align: center;
+        }
+
+        .hero-about h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero-about p {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease;
+        }
+
+        /* Main Content Container */
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* Section Styles */
+        .section {
+            margin-bottom: 4rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .section-title {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            color: #007BFF;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #007BFF, #00D4FF);
+        }
+
+        /* Story Section with Image */
+        .story-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        .story-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            color: #555;
+        }
+
+        .story-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .story-image:hover {
+            transform: scale(1.02);
+        }
+
+        /* Mission, Vision, Values Grid */
+        .mvv-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .mvv-card {
+            background: linear-gradient(135deg, #F0F0F0 0%, #FFFFFF 100%);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border-left: 4px solid #007BFF;
+        }
+
+        .mvv-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,123,255,0.2);
+        }
+
+        .mvv-card h3 {
+            color: #007BFF;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .mvv-card p, .mvv-card ul {
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .mvv-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .mvv-card ul li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .mvv-card ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #007BFF;
+            font-weight: bold;
+        }
+
+        /* Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .team-card {
+            text-align: center;
+            padding: 2rem;
+            background: #F0F0F0;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .team-card:hover {
+            background: #DCF0FF;
+            transform: translateY(-5px);
+        }
+
+        .team-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1rem;
+            border: 4px solid #007BFF;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: linear-gradient(135deg, #007BFF 0%, #0056b3 100%);
+            color: #FFFFFF;
+            padding: 4rem 2rem;
+            margin: 4rem 0;
+            border-radius: 15px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #FFD700;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Accreditation Section */
+        .accreditation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .accreditation-card {
+            text-align: center;
+            padding: 2rem;
+            background: #F0F0F0;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .accreditation-card:hover {
+            background: #007BFF;
+            color: #FFFFFF;
+            transform: scale(1.05);
+        }
+
+        .accreditation-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #DCF0FF 0%, #F0F0F0 100%);
+            border-radius: 15px;
+            margin-top: 4rem;
+        }
+
+        .cta-section h2 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            color: #007BFF;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #007BFF 0%, #0056b3 100%);
+            color: #FFFFFF;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,123,255,0.3);
+        }
+
+        .btn-secondary {
+            background: #FFFFFF;
+            color: #007BFF;
+            border: 2px solid #007BFF;
+        }
+
+        .btn-secondary:hover {
+            background: #007BFF;
+            color: #FFFFFF;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: #FFFFFF;
+            padding: 3rem 2rem 1rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: #007BFF;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #FFFFFF;
+            text-decoration: none;
+            line-height: 2;
+            opacity: 0.9;
+        }
+
+        .footer-section a:hover {
+            color: #007BFF;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #555;
+            opacity: 0.8;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 0 1rem;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #007BFF;
+                flex-direction: column;
+                padding: 1rem;
+                gap: 0;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 1rem;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .story-section {
+                grid-template-columns: 1fr;
+            }
+
+            .story-image {
+                height: 300px;
+            }
+
+            .mvv-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-about {
+                padding: 4rem 1rem 3rem;
+            }
+
+            .about-container {
+                padding: 2rem 1rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header>
+        <nav>
+            <div class="logo-container">
+                <img src="1769597873667_image.png" alt="Global Home Health Logo" class="logo">
+                <span class="company-name">Global Home Health</span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="services.html">Care Services</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="faq.html">FAQs</a></li>
+                <li><a href="careers.html">Careers</a></li>
+            </ul>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-about">
+        <h1>About Global Home Health and Durable Services</h1>
+        <p>Committed to providing compassionate, quality home healthcare that empowers our patients to live with dignity and independence</p>
+    </section>
+
+    <!-- Main Content -->
+    <div class="about-container">
+        
+        <!-- Our Story Section -->
+        <section class="section">
+            <h2 class="section-title">Our Story</h2>
+            <div class="story-section">
+                <div class="story-content">
+                    <p>Global Home Health and Durable Services was founded with a simple yet powerful mission: to bring quality healthcare directly to the homes of those who need it most. We recognized that many patients prefer the comfort and familiarity of their own homes while receiving medical care, and we made it our mission to make that possible.</p>
+                    
+                    <p>What started as a small team of dedicated healthcare professionals has grown into a comprehensive home health services provider, serving our community with compassion, expertise, and unwavering commitment to excellence.</p>
+                    
+                    <p>Today, we proudly serve patients across our region, providing skilled nursing, therapy services, personal care, and durable medical equipment—all delivered with the same personal touch and professional excellence that has defined us from the beginning.</p>
+                </div>
+                <img src="pexels-kampus-7551686.jpg" alt="Caring healthcare team assisting patient" class="story-image">
+            </div>
+        </section>
+
+        <!-- Mission, Vision, Values -->
+        <section class="section">
+            <h2 class="section-title">Our Mission, Vision & Values</h2>
+            <div class="mvv-grid">
+                <div class="mvv-card">
+                    <h3>🎯 Our Mission</h3>
+                    <p>To provide exceptional, patient-centered home healthcare services that enhance quality of life, promote healing, and support independence for individuals in the comfort of their own homes.</p>
+                </div>
+
+                <div class="mvv-card">
+                    <h3>🔭 Our Vision</h3>
+                    <p>To be the most trusted and preferred home healthcare provider in our community, recognized for our clinical excellence, compassionate care, and innovative approach to home-based healthcare.</p>
+                </div>
+
+                <div class="mvv-card">
+                    <h3>💎 Our Core Values</h3>
+                    <ul>
+                        <li>Compassion in every interaction</li>
+                        <li>Excellence in clinical care</li>
+                        <li>Respect for patient dignity</li>
+                        <li>Integrity in all we do</li>
+                        <li>Innovation in healthcare delivery</li>
+                        <li>Collaboration with families and caregivers</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- What Makes Us Different -->
+        <section class="section">
+            <h2 class="section-title">What Makes Us Different</h2>
+            <div class="mvv-grid">
+                <div class="mvv-card">
+                    <h3>👥 Personalized Care Plans</h3>
+                    <p>Every patient receives a customized care plan developed specifically for their unique needs, health conditions, and personal goals. We don't believe in one-size-fits-all healthcare.</p>
+                </div>
+
+                <div class="mvv-card">
+                    <h3>🏆 Highly Trained Professionals</h3>
+                    <p>Our team consists of licensed nurses, certified therapists, and experienced caregivers who receive ongoing training in the latest healthcare practices and technologies.</p>
+                </div>
+
+                <div class="mvv-card">
+                    <h3>📱 24/7 Availability</h3>
+                    <p>Healthcare needs don't follow a 9-to-5 schedule. That's why we provide round-the-clock support and emergency response for our patients and their families.</p>
+                </div>
+
+                <div class="mvv-card">
+                    <h3>🤝 Family Partnership</h3>
+                    <p>We work closely with families, keeping them informed and involved in care decisions. Your loved one's health is our shared priority.</p>
+                </div>
+
+                <div class="mvv-card">
+                    <h3>💻 Advanced Technology</h3>
+                    <p>We utilize cutting-edge healthcare technology for remote monitoring, electronic health records, and seamless communication with physicians and specialists.</p>
+                </div>
+
+                <div class="mvv-card">
+                    <h3>🛡️ HIPAA Compliant</h3>
+                    <p>Your privacy and security are paramount. We maintain strict HIPAA compliance and use encrypted systems to protect all patient information.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <div class="stats-section">
+            <h2 style="text-align: center; margin-bottom: 3rem; font-size: 2.5rem;">Our Impact by the Numbers</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">5,000+</div>
+                    <div class="stat-label">Patients Served</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Patient Satisfaction</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Healthcare Professionals</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Years of Experience</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Our Services Approach -->
+        <section class="section">
+            <h2 class="section-title">Our Comprehensive Care Approach</h2>
+            <div class="story-section">
+                <img src="pexels-vlada-karpovich-5790718.jpg" alt="Healthcare professional checking patient temperature" class="story-image">
+                <div class="story-content">
+                    <p><strong>We provide holistic care that addresses not just medical needs, but the overall well-being of our patients.</strong></p>
+                    
+                    <p>Our approach includes:</p>
+                    <ul style="list-style: none; padding-left: 0;">
+                        <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: #007BFF; font-weight: bold;">✓</span>
+                            Comprehensive health assessments
+                        </li>
+                        <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: #007BFF; font-weight: bold;">✓</span>
+                            Medication management and monitoring
+                        </li>
+                        <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: #007BFF; font-weight: bold;">✓</span>
+                            Coordination with physicians and specialists
+                        </li>
+                        <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: #007BFF; font-weight: bold;">✓</span>
+                            Patient and family education
+                        </li>
+                        <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: #007BFF; font-weight: bold;">✓</span>
+                            Emotional and social support
+                        </li>
+                        <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: #007BFF; font-weight: bold;">✓</span>
+                            Regular progress monitoring and plan adjustments
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Accreditation Section -->
+        <section class="section">
+            <h2 class="section-title">Accreditations & Certifications</h2>
+            <div class="accreditation-grid">
+                <div class="accreditation-card">
+                    <div class="accreditation-icon">🏥</div>
+                    <h4>State Licensed</h4>
+                    <p>Fully licensed home health agency</p>
+                </div>
+                <div class="accreditation-card">
+                    <div class="accreditation-icon">✓</div>
+                    <h4>Medicare Certified</h4>
+                    <p>Certified to provide Medicare services</p>
+                </div>
+                <div class="accreditation-card">
+                    <div class="accreditation-icon">🛡️</div>
+                    <h4>HIPAA Compliant</h4>
+                    <p>Full compliance with privacy regulations</p>
+                </div>
+                <div class="accreditation-card">
+                    <div class="accreditation-icon">⭐</div>
+                    <h4>Accredited Care</h4>
+                    <p>Meeting highest standards of excellence</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <h2>Ready to Experience Quality Home Healthcare?</h2>
+            <p>Join thousands of families who trust Global Home Health and Durable Services for their healthcare needs.</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn btn-primary">Schedule a Consultation</a>
+                <a href="tel:682-323-1138" class="btn btn-secondary">Call: 682-323-1138</a>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Global Home Health</h3>
+                <p>Providing compassionate, quality home healthcare services to our community.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><a href="index.html">Home</a></p>
+                <p><a href="about.html">About</a></p>
+                <p><a href="services.html">Services</a></p>
+                <p><a href="contact.html">Contact</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>📞 Phone: <a href="tel:682-323-1138">682-323-1138</a></p>
+                <p>✉️ Email: <a href="mailto:info@globalhomehealth.org">info@globalhomehealth.org</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <p><a href="#">Privacy Policy</a></p>
+                <p><a href="#">Terms of Service</a></p>
+                <p><a href="#">HIPAA Notice</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Global Home Health and Durable Services. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.8s ease forwards';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section, .mvv-card, .team-card, .accreditation-card').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
