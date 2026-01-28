@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Global Home Health and Durable Services - Professional home healthcare in Arlington, TX. Licensed LHHS and PAS services with compassionate care.">
-    <title>Global Home Health and Durable Services | Professional Home Care Arlington TX</title>
+    <meta name="description" content="Professional personal assistance and licensed home health services in Arlington, TX. Compassionate care including skilled nursing, therapy, personal care, and companionship. Call +1(682)-323-1138.">
+    <meta name="keywords" content="home health Arlington TX, personal assistance services, skilled nursing, physical therapy, occupational therapy, speech therapy, home care Texas">
+    <title>Home Health & Personal Care Services Arlington TX | Global Health and Durable Services</title>
     
     <style>
+        /* CSS RESET & BASE STYLES */
         * {
             margin: 0;
             padding: 0;
@@ -14,267 +16,146 @@
         }
         
         :root {
-            --primary-blue: #007BFF;
-            --light-blue: #DCF0FF;
-            --light-gray: #F0F0F0;
-            --dark-text: #333333;
-            --white: #FFFFFF;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
+  --primary-navy: #028adfd5;
+  --primary-blue: #0aa9f3e9;
+  --light-blue: #0756cede;
+  --dark-gray: #474040;
+  --light-gray: #0768dea7;
+  --white: #ffffff;
+  --success-green: #167626;
+}
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: var(--dark-text);
-            overflow-x: hidden;
+            color: var(--dark-gray);
+            font-size: 16px;
         }
         
-        /* HEADER */
+        /* HEADER STYLES */
         .header {
             background: var(--white);
-            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-            position: sticky;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
             top: 0;
             z-index: 1000;
-            transition: all 0.3s ease;
-        }
-        
-        .header.scrolled {
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
         }
         
         .header-top {
-            background: var(--primary-blue);
+            background: var(--primary-navy);
             color: var(--white);
-            padding: 12px 0;
+            padding: 10px 0;
+            font-size: 14px;
         }
         
-        .header-top-content {
+        .header-top .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
         }
         
         .contact-info {
             display: flex;
-            gap: 25px;
-            flex-wrap: wrap;
+            gap: 30px;
         }
         
         .contact-info a {
             color: var(--white);
             text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 14px;
-            transition: opacity 0.3s;
-        }
-        
-        .contact-info a:hover {
-            opacity: 0.8;
         }
         
         .header-main {
             padding: 15px 0;
         }
         
-        .nav-container {
+        .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+        }
+        
+        .nav-wrapper {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
         
         .logo {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .logo img {
-            height: 60px;
-            width: auto;
-            transition: transform 0.3s;
-        }
-        
-        .logo:hover img {
-            transform: scale(1.05);
-        }
-        
-        .logo-text {
-            font-size: 18px;
+            font-size: 24px;
             font-weight: bold;
-            color: var(--dark-text);
-            line-height: 1.2;
+            color: var(--primary-navy);
         }
         
         .nav-menu {
             display: flex;
             list-style: none;
             gap: 30px;
-            align-items: center;
         }
         
         .nav-menu a {
-            color: var(--dark-text);
+            color: var(--dark-gray);
             text-decoration: none;
             font-weight: 500;
-            font-size: 15px;
             transition: color 0.3s;
-            position: relative;
-            padding: 5px 0;
-        }
-        
-        .nav-menu a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary-blue);
-            transition: width 0.3s;
-        }
-        
-        .nav-menu a:hover::after {
-            width: 100%;
         }
         
         .nav-menu a:hover {
-            color: var(--primary-blue);
+            color: var(--primary-teal);
         }
         
-        .nav-cta {
-            background: var(--primary-blue);
-            color: var(--white) !important;
-            padding: 10px 20px;
-            border-radius: 5px;
-            transition: all 0.3s;
-        }
-        
-        .nav-cta:hover {
-            background: #0056b3;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,123,255,0.3);
-        }
-        
-        .nav-cta::after {
-            display: none;
-        }
-        
-        .mobile-toggle {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 28px;
-            color: var(--dark-text);
-            cursor: pointer;
-        }
-        
-        /* HERO */
+        /* HERO SECTION */
         .hero {
-            position: relative;
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-teal) 100%);
             color: var(--white);
-            overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(0,123,255,0.9), rgba(0,86,179,0.85));
-            z-index: 1;
-        }
-        
-        .hero-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: 0;
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 900px;
-            padding: 0 20px;
-            animation: fadeInUp 1s ease;
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            padding: 180px 20px 100px;
+            margin-top: 100px;
+            text-align: center;
         }
         
         .hero h1 {
-            font-size: clamp(32px, 6vw, 60px);
+            font-size: 48px;
             margin-bottom: 20px;
             line-height: 1.2;
-            font-weight: 700;
         }
         
         .hero p {
-            font-size: clamp(16px, 3vw, 22px);
-            margin-bottom: 35px;
-            opacity: 0.95;
-            line-height: 1.6;
+            font-size: 20px;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .cta-buttons {
             display: flex;
-            gap: 15px;
+            gap: 20px;
             justify-content: center;
             flex-wrap: wrap;
         }
         
         .btn {
-            padding: 16px 35px;
+            padding: 15px 35px;
             border-radius: 5px;
             text-decoration: none;
             font-weight: 600;
             font-size: 16px;
             transition: all 0.3s;
             display: inline-block;
-            cursor: pointer;
             border: 2px solid transparent;
         }
         
         .btn-primary {
-            background: var(--white);
-            color: var(--primary-blue);
+            background: var(--accent-gold);
+            color: var(--white);
         }
         
         .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(255,255,255,0.3);
+            background: #E59348;
+            transform: translateY(-2px);
         }
         
         .btn-secondary {
@@ -285,113 +166,13 @@
         
         .btn-secondary:hover {
             background: var(--white);
-            color: var(--primary-blue);
-            transform: translateY(-3px);
+            color: var(--primary-navy);
         }
         
-        /* TRUST BADGES */
-        .trust-section {
-            background: var(--light-gray);
-            padding: 40px 20px;
-        }
-        
-        .trust-badges {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            text-align: center;
-        }
-        
-        .badge {
-            background: var(--white);
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: transform 0.3s, box-shadow 0.3s;
-            animation: fadeIn 0.8s ease;
-        }
-        
-        .badge:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,123,255,0.2);
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.9); }
-            to { opacity: 1; transform: scale(1); }
-        }
-        
-        .badge-icon {
-            font-size: 36px;
-            margin-bottom: 12px;
-        }
-        
-        .badge h3 {
-            font-size: 16px;
-            color: var(--dark-text);
-            margin-bottom: 5px;
-        }
-        
-        .badge p {
-            font-size: 13px;
-            color: #666;
-        }
-        
-        /* HIPAA NOTICE */
-        .hipaa-notice {
-            background: #FFF3CD;
-            border-left: 5px solid #FFC107;
-            padding: 25px;
-            margin: 50px auto;
-            max-width: 1200px;
-            border-radius: 5px;
-            animation: slideIn 0.6s ease;
-        }
-        
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateX(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        .hipaa-notice h3 {
-            color: #856404;
-            font-size: 20px;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .hipaa-notice p {
-            color: #856404;
-            line-height: 1.7;
-        }
-        
-        .hipaa-notice a {
-            color: var(--primary-blue);
-            font-weight: 600;
-        }
-        
-        /* SECTIONS */
-        .section {
+        /* SERVICES SECTION */
+        .services {
             padding: 80px 20px;
-        }
-        
-        .section.alt {
             background: var(--light-gray);
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
         }
         
         .section-header {
@@ -399,31 +180,19 @@
             margin-bottom: 60px;
         }
         
-        .section-subtitle {
-            color: var(--primary-blue);
-            font-weight: 600;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 10px;
-        }
-        
-        .section-title {
-            font-size: clamp(28px, 5vw, 42px);
-            color: var(--dark-text);
+        .section-header h2 {
+            font-size: 36px;
+            color: var(--primary-navy);
             margin-bottom: 15px;
-            line-height: 1.2;
         }
         
-        .section-description {
+        .section-header p {
             font-size: 18px;
-            color: #666;
+            color: var(--dark-gray);
             max-width: 700px;
             margin: 0 auto;
-            line-height: 1.7;
         }
         
-        /* SERVICES GRID */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -433,81 +202,67 @@
         
         .service-card {
             background: var(--white);
-            padding: 35px;
+            padding: 40px 30px;
             border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: all 0.3s;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 5px;
-            height: 100%;
-            background: var(--primary-blue);
-            transform: scaleY(0);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
             transition: transform 0.3s;
         }
         
-        .service-card:hover::before {
-            transform: scaleY(1);
-        }
-        
         .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,123,255,0.2);
+            transform: translateY(-5px);
         }
         
         .service-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--light-blue);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 40px;
+            font-size: 48px;
             margin-bottom: 20px;
-            transition: all 0.3s;
-        }
-        
-        .service-card:hover .service-icon {
-            background: var(--primary-blue);
-            transform: scale(1.1) rotate(5deg);
         }
         
         .service-card h3 {
-            font-size: 22px;
+            color: var(--primary-navy);
             margin-bottom: 15px;
-            color: var(--dark-text);
+            font-size: 22px;
         }
         
         .service-card p {
-            color: #666;
+            color: var(--dark-gray);
             line-height: 1.7;
+        }
+        
+        /* WHY CHOOSE US SECTION */
+        .why-choose {
+            padding: 80px 20px;
+            background: var(--white);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .feature {
+            text-align: center;
+        }
+        
+        .feature-icon {
+            font-size: 56px;
+            color: var(--primary-teal);
             margin-bottom: 20px;
         }
         
-        .service-link {
-            color: var(--primary-blue);
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: gap 0.3s;
-        }
-        
-        .service-link:hover {
-            gap: 15px;
+        .feature h3 {
+            color: var(--primary-navy);
+            margin-bottom: 10px;
+            font-size: 20px;
         }
         
         /* TESTIMONIALS */
+        .testimonials {
+            padding: 80px 20px;
+            background: var(--light-gray);
+        }
+        
         .testimonials-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -517,208 +272,49 @@
         
         .testimonial-card {
             background: var(--white);
-            padding: 35px;
+            padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            position: relative;
-            transition: transform 0.3s;
-        }
-        
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .testimonial-card::before {
-            content: '"';
-            position: absolute;
-            top: 20px;
-            left: 25px;
-            font-size: 80px;
-            color: var(--light-blue);
-            font-family: Georgia, serif;
-            opacity: 0.5;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
         .testimonial-text {
             font-style: italic;
-            color: #555;
-            line-height: 1.8;
             margin-bottom: 20px;
-            position: relative;
-            z-index: 1;
+            color: var(--dark-gray);
+            line-height: 1.7;
         }
         
         .testimonial-author {
             font-weight: 600;
-            color: var(--dark-text);
-            font-size: 16px;
-        }
-        
-        .testimonial-location {
-            color: var(--primary-blue);
-            font-size: 14px;
-            margin-top: 5px;
-        }
-        
-        /* ABOUT WITH IMAGE */
-        .about-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-        
-        .about-image {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        }
-        
-        .about-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-        
-        .about-image:hover img {
-            transform: scale(1.05);
-        }
-        
-        .about-content h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-            color: var(--dark-text);
-        }
-        
-        .about-content p {
-            color: #555;
-            line-height: 1.8;
-            margin-bottom: 15px;
-        }
-        
-        .about-list {
-            list-style: none;
-            margin: 25px 0;
-        }
-        
-        .about-list li {
-            padding: 10px 0;
-            padding-left: 30px;
-            position: relative;
-            color: #555;
-        }
-        
-        .about-list li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--primary-blue);
-            font-weight: bold;
-            font-size: 18px;
-        }
-        
-        /* FAQ */
-        .faq-item {
-            background: var(--white);
-            margin-bottom: 15px;
-            border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-            overflow: hidden;
-        }
-        
-        .faq-question {
-            padding: 20px 25px;
-            cursor: pointer;
-            font-weight: 600;
-            color: var(--dark-text);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: background 0.3s;
-        }
-        
-        .faq-question:hover {
-            background: var(--light-gray);
-        }
-        
-        .faq-toggle {
-            font-size: 24px;
-            color: var(--primary-blue);
-            transition: transform 0.3s;
-        }
-        
-        .faq-item.active .faq-toggle {
-            transform: rotate(45deg);
-        }
-        
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-            padding: 0 25px;
-        }
-        
-        .faq-item.active .faq-answer {
-            max-height: 500px;
-            padding: 0 25px 20px;
-        }
-        
-        .faq-answer p {
-            color: #555;
-            line-height: 1.7;
+            color: var(--primary-navy);
         }
         
         /* CTA SECTION */
         .cta-section {
-            background: linear-gradient(135deg, var(--primary-blue), #0056b3);
+            background: var(--primary-teal);
             color: var(--white);
             padding: 80px 20px;
             text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
-            background-size: 50px 50px;
-            animation: rotate 30s linear infinite;
-        }
-        
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        
-        .cta-content {
-            position: relative;
-            z-index: 1;
         }
         
         .cta-section h2 {
-            font-size: clamp(28px, 5vw, 42px);
+            font-size: 36px;
             margin-bottom: 20px;
         }
         
         .cta-section p {
-            font-size: 20px;
+            font-size: 18px;
             margin-bottom: 30px;
         }
         
         /* FOOTER */
         .footer {
-            background: #1a1a1a;
+            background: var(--primary-navy);
             color: var(--white);
-            padding: 60px 20px 30px;
+            padding: 60px 20px 20px;
         }
         
         .footer-grid {
-            max-width: 1200px;
-            margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 40px;
@@ -726,9 +322,8 @@
         }
         
         .footer h3 {
-            color: var(--white);
             margin-bottom: 20px;
-            font-size: 20px;
+            color: var(--accent-gold);
         }
         
         .footer ul {
@@ -736,608 +331,328 @@
         }
         
         .footer ul li {
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
         
         .footer a {
-            color: #ccc;
+            color: var(--white);
             text-decoration: none;
-            transition: color 0.3s;
         }
         
         .footer a:hover {
-            color: var(--white);
-        }
-        
-        .footer p {
-            color: #ccc;
-            line-height: 1.7;
+            color: var(--accent-gold);
         }
         
         .footer-bottom {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding-top: 30px;
-            border-top: 1px solid #333;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 20px;
             text-align: center;
-            color: #888;
         }
         
-        /* SCROLL TO TOP */
-        .scroll-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: var(--primary-blue);
-            color: var(--white);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s;
-            box-shadow: 0 5px 15px rgba(0,123,255,0.4);
-            z-index: 999;
+        /* HIPAA NOTICE */
+        .hipaa-notice {
+            background: #FFF3CD;
+            border-left: 4px solid var(--accent-gold);
+            padding: 15px;
+            margin: 20px 0;
         }
         
-        .scroll-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .scroll-top:hover {
-            background: #0056b3;
-            transform: translateY(-5px);
-        }
-        
-        /* LOADING */
-        .loading {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--white);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            transition: opacity 0.5s, visibility 0.5s;
-        }
-        
-        .loading.hidden {
-            opacity: 0;
-            visibility: hidden;
-        }
-        
-        .loader {
-            width: 50px;
-            height: 50px;
-            border: 5px solid var(--light-gray);
-            border-top-color: var(--primary-blue);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-        
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-        
-        /* MOBILE RESPONSIVE */
+        /* RESPONSIVE */
         @media (max-width: 768px) {
-            .mobile-toggle {
-                display: block;
+            .hero h1 {
+                font-size: 32px;
             }
             
             .nav-menu {
-                position: fixed;
-                top: 0;
-                right: -100%;
                 flex-direction: column;
-                background: var(--white);
-                width: 85%;
-                max-width: 320px;
-                padding: 80px 30px 30px;
-                box-shadow: -5px 0 20px rgba(0,0,0,0.2);
-                transition: right 0.4s ease;
-                height: 100vh;
-                overflow-y: auto;
-                align-items: flex-start;
-            }
-            
-            .nav-menu.active {
-                right: 0;
-            }
-            
-            .nav-menu a {
-                display: block;
-                padding: 15px 0;
-                width: 100%;
-                border-bottom: 1px solid var(--light-gray);
-            }
-            
-            .nav-cta {
-                width: 100%;
-                text-align: center;
-                margin-top: 10px;
-            }
-            
-            .about-section {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            
-            .contact-info {
-                font-size: 12px;
                 gap: 15px;
             }
             
-            .hero {
-                min-height: 70vh;
-                padding: 40px 20px;
-            }
-            
-            .trust-badges {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
-            }
-            
-            .badge {
-                padding: 20px 15px;
-            }
-            
-            .badge-icon {
+            .section-header h2 {
                 font-size: 28px;
-            }
-            
-            .services-grid,
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .scroll-top {
-                bottom: 20px;
-                right: 20px;
-                width: 45px;
-                height: 45px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .logo img {
-                height: 45px;
-            }
-            
-            .logo-text {
-                font-size: 14px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- LOADING SCREEN -->
-    <div class="loading" id="loading">
-        <div class="loader"></div>
-    </div>
-
     <!-- HEADER -->
-    <header class="header" id="header">
+    <header class="header">
         <div class="header-top">
-            <div class="header-top-content">
+            <div class="container">
                 <div class="contact-info">
-                    <a href="tel:6823231138">
-                        <span>📞</span>
-                        <span>(682) 323-1138</span>
-                    </a>
-                    <a href="mailto:info@globalhomehealth.org">
-                        <span>✉️</span>
-                        <span>info@globalhomehealth.org</span>
-                    </a>
+                    <a href="tel:7345601699">📞 +1(682)-323-1138</a>
+                    <a href="mailto: info@globalhomehealth.org">✉️  info@globalhomehealth.org</a>
                 </div>
                 <div>📍 Arlington, TX 76001</div>
             </div>
         </div>
         
         <div class="header-main">
-            <div class="nav-container">
-                <div class="logo">
-                    <img src="/mnt/user-data/uploads/1769597779133_image.png" alt="Global Home Health and Durable Services Logo">
-                </div>
-                
-                <ul class="nav-menu" id="navMenu">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Care Services</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#resources">Resources</a></li>
-                    <li><a href="#faqs">FAQs</a></li>
-                    <li><a href="#careers">Career</a></li>
-                    <li><a href="#contact" class="nav-cta">Contact Us</a></li>
-                </ul>
-                
-                <button class="mobile-toggle" id="mobileToggle">☰</button>
+            <div class="container">
+                <nav class="nav-wrapper">
+                    <div class="logo">Global Health & Durable Services</div>
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </header>
 
-    <!-- HERO -->
-    <section class="hero" id="home">
-        <img src="/mnt/user-data/uploads/1769597873667_image.png" alt="Professional Home Healthcare" class="hero-bg">
-        <div class="hero-content">
-            <h1>Professional Home Health & Durable Services</h1>
-            <p>Compassionate, skilled nursing and personal care delivered with dignity and excellence. Licensed LHHS and PAS services in Arlington, Texas.</p>
-            <div class="cta-buttons">
-                <a href="tel:6823231138" class="btn btn-primary">Call (682) 323-1138</a>
-                <a href="#contact" class="btn btn-secondary">Request Free Consultation</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- TRUST BADGES -->
-    <section class="trust-section">
-        <div class="trust-badges">
-            <div class="badge">
-                <div class="badge-icon">✓</div>
-                <h3>HHSC Licensed</h3>
-                <p>Texas State Licensed</p>
-            </div>
-            <div class="badge">
-                <div class="badge-icon">🛡️</div>
-                <h3>Fully Insured</h3>
-                <p>Comprehensive Coverage</p>
-            </div>
-            <div class="badge">
-                <div class="badge-icon">🔒</div>
-                <h3>HIPAA Compliant</h3>
-                <p>Privacy Protected</p>
-            </div>
-            <div class="badge">
-                <div class="badge-icon">⭐</div>
-                <h3>5-Star Service</h3>
-                <p>Highly Rated Care</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- HIPAA NOTICE -->
-    <div class="container">
-        <div class="hipaa-notice">
-            <h3>⚕️ HIPAA Privacy Notice</h3>
-            <p>Global Home Health and Durable Services is committed to protecting your health information. We comply with all HIPAA regulations and maintain strict confidentiality of protected health information (PHI). Your privacy rights are respected and protected at all times. <a href="#privacy">View our complete Privacy Policy</a></p>
-        </div>
-    </div>
-
-    <!-- ABOUT SECTION -->
-    <section class="section" id="about">
+    <!-- HERO SECTION -->
+    <section class="hero">
         <div class="container">
-            <div class="about-section">
-                <div class="about-image">
-                    <img src="/mnt/user-data/uploads/pexels-kampus-7551686.jpg" alt="Professional Caregivers Helping Patient">
-                </div>
-                <div class="about-content">
-                    <div class="section-subtitle">About Us</div>
-                    <h2>Trusted Home Healthcare Since Day One</h2>
-                    <p>At Global Home Health and Durable Services, we believe everyone deserves compassionate, professional care in the comfort of their own home. Our team of licensed healthcare professionals and dedicated caregivers provide both medical and non-medical services tailored to each individual's unique needs.</p>
-                    <p>We're proud to serve Arlington, Texas and surrounding communities with comprehensive home health solutions that enhance quality of life while maintaining dignity and independence.</p>
-                    <ul class="about-list">
-                        <li>Texas HHSC Licensed for LHHS and PAS</li>
-                        <li>Experienced, Background-Checked Caregivers</li>
-                        <li>Personalized Care Plans for Every Client</li>
-                        <li>24/7 Availability and Support</li>
-                        <li>Family-Centered Approach to Care</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-primary">Learn More About Us</a>
-                </div>
+            <h1>Compassionate Home Health & Personal Care Services</h1>
+            <p>Professional skilled nursing, therapy services, and personal assistance delivered with dignity and excellence in Arlington, Texas and surrounding communities.</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn btn-primary">Request Free Consultation</a>
+                <a href="tel:7345601699" class="btn btn-secondary">Call +1(682)-323-1138</a>
             </div>
         </div>
     </section>
 
-    <!-- SERVICES SECTION -->
-    <section class="section alt" id="services">
+    <!-- SERVICES OVERVIEW -->
+    <section class="services">
         <div class="container">
             <div class="section-header">
-                <div class="section-subtitle">Our Services</div>
-                <h2 class="section-title">Comprehensive Home Healthcare Solutions</h2>
-                <p class="section-description">We provide both Licensed Home Health Services (LHHS) and Personal Assistance Services (PAS) to meet all your care needs.</p>
+                <h2>Our Comprehensive Services</h2>
+                <p>We provide both Licensed Home Health Services (LHHS) and Personal Assistance Services (PAS) tailored to your unique healthcare needs.</p>
             </div>
-            
+
             <div class="services-grid">
+                <!-- Licensed Home Health Services -->
                 <div class="service-card">
                     <div class="service-icon">🏥</div>
                     <h3>Skilled Nursing Care</h3>
-                    <p>Professional RN and LVN services including wound care, medication management, IV therapy, and chronic disease management.</p>
-                    <a href="#" class="service-link">Learn More →</a>
+                    <p>Professional RN and LVN services including wound care, medication management, IV therapy, chronic disease management, and post-surgical care in the comfort of your home.</p>
                 </div>
-                
+
                 <div class="service-card">
                     <div class="service-icon">🦵</div>
                     <h3>Physical Therapy</h3>
-                    <p>Rehabilitation to restore mobility, strength, and function. Post-surgery recovery, pain management, and fall prevention.</p>
-                    <a href="#" class="service-link">Learn More →</a>
+                    <p>Comprehensive rehabilitation services to restore mobility, strength, and function. Post-surgery recovery, fall prevention, pain management, and functional training.</p>
                 </div>
-                
+
                 <div class="service-card">
                     <div class="service-icon">✋</div>
                     <h3>Occupational Therapy</h3>
-                    <p>Help with daily living activities, adaptive equipment training, home safety assessments, and independence support.</p>
-                    <a href="#" class="service-link">Learn More →</a>
+                    <p>Help with daily living activities, adaptive equipment training, home safety assessments, and strategies to maintain independence in your daily routines.</p>
                 </div>
-                
+
                 <div class="service-card">
                     <div class="service-icon">💬</div>
                     <h3>Speech Therapy</h3>
-                    <p>Treatment for speech, language, and swallowing disorders. Communication rehabilitation and cognitive therapy.</p>
-                    <a href="#" class="service-link">Learn More →</a>
+                    <p>Expert treatment for speech, language, and swallowing disorders. Communication rehabilitation, cognitive therapy, and dysphagia management.</p>
                 </div>
-                
+
+                <div class="service-card">
+                    <div class="service-icon">🤝</div>
+                    <h3>Medical Social Services</h3>
+                    <p>Psychosocial assessments, counseling, community resource coordination, caregiver support, and assistance with healthcare decision-making.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">👤</div>
+                    <h3>Home Health Aides</h3>
+                    <p>Supervised personal care including bathing, dressing, mobility assistance, vital signs monitoring, and support with activities of daily living under RN direction.</p>
+                </div>
+
+                <!-- Personal Assistance Services -->
                 <div class="service-card">
                     <div class="service-icon">❤️</div>
                     <h3>Personal Care Assistance</h3>
-                    <p>Compassionate help with bathing, dressing, grooming, and mobility. Dignified support respecting independence.</p>
-                    <a href="#" class="service-link">Learn More →</a>
+                    <p>Compassionate help with bathing, dressing, grooming, toileting, and mobility. Dignified support that respects your independence and preferences.</p>
                 </div>
-                
+
+                <div class="service-card">
+                    <div class="service-icon">👥</div>
+                    <h3>Companionship & Support</h3>
+                    <p>Friendly conversation, social engagement, emotional support, and meaningful activities to enhance quality of life and reduce isolation.</p>
+                </div>
+
                 <div class="service-card">
                     <div class="service-icon">🧠</div>
                     <h3>Alzheimer's & Dementia Care</h3>
-                    <p>Specialized, patient-centered care for individuals with memory challenges. Trained caregivers providing safe support.</p>
-                    <a href="#" class="service-link">Learn More →</a>
+                    <p>Specialized, patient-centered care for individuals with memory challenges. Trained caregivers providing safe, structured, compassionate support.</p>
                 </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🍽️</div>
+                    <h3>Meal Preparation & Nutrition</h3>
+                    <p>Nutritious meal planning and preparation, grocery shopping assistance, dietary accommodation, and support with eating and nutrition management.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3>Homemaking Services</h3>
+                    <p>Light housekeeping, laundry, organizing, and maintaining a clean, safe living environment to support comfort and independence at home.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">⏰</div>
+                    <h3>Respite Care</h3>
+                    <p>Temporary relief for family caregivers. Professional care allowing you to rest, attend to personal needs, or simply recharge while loved ones are safe.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="why-choose">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Families Trust Global Health & Durable Services</h2>
+                <p>Licensed, professional, and committed to excellence in every aspect of care</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">✓</div>
+                    <h3>Fully Licensed & Certified</h3>
+                    <p>Texas HHSC licensed for both LHHS and PAS. Medicare certified, insured, and compliant with all regulations.</p>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">👨‍⚕️</div>
+                    <h3>Expert Healthcare Professionals</h3>
+                    <p>Registered nurses, licensed therapists, and trained caregivers dedicated to providing superior care.</p>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">📋</div>
+                    <h3>Personalized Care Plans</h3>
+                    <p>Individualized assessment and customized care plans designed around your specific needs and goals.</p>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">🔒</div>
+                    <h3>HIPAA Compliant</h3>
+                    <p>Strict privacy and security protocols protecting your health information and maintaining confidentiality.</p>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">📞</div>
+                    <h3>24/7 Support Available</h3>
+                    <p>Round-the-clock access to our team for questions, concerns, or emergency support when you need it.</p>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">👨‍👩‍👧</div>
+                    <h3>Family Partnership</h3>
+                    <p>We keep families informed and involved, providing regular updates and welcoming your input in care decisions.</p>
+                </div>
+            </div>
+
+            <div class="hipaa-notice">
+                <strong>⚕️ HIPAA Privacy Notice:</strong> Global Health & Durable Services is committed to protecting your health information. We comply with all HIPAA regulations and maintain strict confidentiality of protected health information (PHI). Your privacy rights are respected and protected at all times. <a href="privacy.html">View our complete Privacy Policy</a>
             </div>
         </div>
     </section>
 
     <!-- TESTIMONIALS -->
-    <section class="section" id="testimonials">
+    <section class="testimonials">
         <div class="container">
             <div class="section-header">
-                <div class="section-subtitle">Testimonials</div>
-                <h2 class="section-title">What Our Families Say</h2>
-                <p class="section-description">Real experiences from clients and families we've had the privilege to serve.</p>
+                <h2>What Our Families Say</h2>
+                <p>Real experiences from clients and families we've served</p>
             </div>
-            
+
             <div class="testimonials-grid">
                 <div class="testimonial-card">
-                    <p class="testimonial-text">
-                        "The caregiver from Global Home Health has been exceptional with my mother. Patient, professional, and treats her with dignity. We finally have peace of mind knowing she's in caring hands."
-                    </p>
-                    <div class="testimonial-author">Sarah Martinez</div>
-                    <div class="testimonial-location">Arlington, TX</div>
+                    <div class="testimonial-text">
+                        "The physical therapist from Global Health helped my mother regain her mobility after hip surgery. Professional, patient, and genuinely caring. We couldn't have asked for better care."
+                    </div>
+                    <div class="testimonial-author">— Sarah M., Arlington</div>
                 </div>
-                
-                <div class="testimonial-card">
-                    <p class="testimonial-text">
-                        "After my father's stroke, the skilled nursing and therapy made all the difference in his recovery. The team is knowledgeable, caring, and professional. Highly recommend!"
-                    </p>
-                    <div class="testimonial-author">James Thompson</div>
-                    <div class="testimonial-location">Grand Prairie, TX</div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <p class="testimonial-text">
-                        "Their specialized Alzheimer's care has been a blessing for our family. The caregivers understand Dad's needs and have become part of our family. Couldn't ask for better care."
-                    </p>
-                    <div class="testimonial-author">Linda Kim</div>
-                    <div class="testimonial-location">Fort Worth, TX</div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- FAQS -->
-    <section class="section alt" id="faqs">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-subtitle">FAQs</div>
-                <h2 class="section-title">Frequently Asked Questions</h2>
-                <p class="section-description">Common questions about our services and how we can help you.</p>
-            </div>
-            
-            <div class="faq-container">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        What services do you provide?
-                        <span class="faq-toggle">+</span>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "After my father's stroke, the skilled nursing care and speech therapy he received at home made all the difference in his recovery. The team is exceptional."
                     </div>
-                    <div class="faq-answer">
-                        <p>We provide both Licensed Home Health Services (LHHS) including skilled nursing, physical therapy, occupational therapy, and speech therapy, as well as Personal Assistance Services (PAS) including personal care, companionship, and Alzheimer's/dementia care.</p>
-                    </div>
+                    <div class="testimonial-author">— James T., Grand Prairie</div>
                 </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        Are you licensed and insured?
-                        <span class="faq-toggle">+</span>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "The Alzheimer's care provided by Global Health has been a blessing. Their caregiver is patient, understanding, and treats Dad with such dignity. Our family has peace of mind."
                     </div>
-                    <div class="faq-answer">
-                        <p>Yes, we are fully licensed by Texas Health and Human Services Commission (HHSC) for both LHHS and PAS services. We are also fully insured and HIPAA compliant.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        What areas do you serve?
-                        <span class="faq-toggle">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>We serve Arlington, Texas and surrounding communities including Grand Prairie, Mansfield, Fort Worth, Euless, Bedford, Hurst, and other Tarrant County areas.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        How do I get started with your services?
-                        <span class="faq-toggle">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Simply call us at (682) 323-1138 or fill out our contact form. We'll schedule a free consultation to assess your needs and create a personalized care plan.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        Do you accept insurance?
-                        <span class="faq-toggle">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Yes, we accept Medicare, Medicaid, and most major private insurance plans. We also offer flexible private pay options. Contact us to verify your specific coverage.</p>
-                    </div>
+                    <div class="testimonial-author">— Linda K., Fort Worth</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA SECTION -->
-    <section class="cta-section" id="contact">
-        <div class="cta-content">
+    <section class="cta-section">
+        <div class="container">
             <h2>Ready to Experience Exceptional Care?</h2>
-            <p>Contact us today for a free consultation. Let's discuss how we can help you or your loved one.</p>
+            <p>Contact us today for a free consultation. Let's discuss how we can help you or your loved one live comfortably and safely at home.</p>
             <div class="cta-buttons">
-                <a href="tel:6823231138" class="btn btn-primary">Call (682) 323-1138</a>
-                <a href="mailto:info@globalhomehealth.org" class="btn btn-secondary">Email Us</a>
+                <a href="contact.html" class="btn btn-primary">Request Free Consultation</a>
+                <a href="tel:7345601699" class="btn btn-secondary">Call +1(682)-323-1138</a>
             </div>
         </div>
     </section>
 
     <!-- FOOTER -->
     <footer class="footer">
-        <div class="footer-grid">
-            <div>
-                <h3>Global Home Health</h3>
-                <p>Professional home health and personal care services in Arlington, Texas and surrounding communities.</p>
-                <br>
-                <p><strong>Texas HHSC Licensed</strong></p>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3>Global Health & Durable Services</h3>
+                    <p>Professional home health and personal care services in Arlington, Texas and surrounding communities.</p>
+                    <br>
+                    <p><strong>Licensed by Texas HHSC</strong><br>
+                    License #: [Pending - Add when received]</p>
+                </div>
+
+                <div>
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="services.html#skilled-nursing">Skilled Nursing Care</a></li>
+                        <li><a href="services.html#physical-therapy">Physical Therapy</a></li>
+                        <li><a href="services.html#occupational-therapy">Occupational Therapy</a></li>
+                        <li><a href="services.html#speech-therapy">Speech Therapy</a></li>
+                        <li><a href="services.html#personal-care">Personal Care Assistance</a></li>
+                        <li><a href="services.html#companionship">Companionship Services</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">All Services</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>Contact Information</h3>
+                    <p><strong>Phone:</strong> +1(682)-323-1138</p>
+                    <p><strong>Email:</strong>  info@globalhomehealth.org</p>
+                    <p><strong>Address:</strong><br>
+                    903 Telluride Drive<br>
+                    Arlington, TX 76001</p>
+                    <br>
+                    <p><strong>Office Hours:</strong><br>
+                    Monday-Friday: 8:00 AM - 5:00 PM<br>
+                    24/7 Care Available</p>
+                </div>
             </div>
-            
-            <div>
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#faqs">FAQs</a></li>
-                </ul>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Global Health & Durable Services. All rights reserved.</p>
+                <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a> | <a href="hipaa.html">HIPAA Notice</a></p>
             </div>
-            
-            <div>
-                <h3>Services</h3>
-                <ul>
-                    <li><a href="#">Skilled Nursing</a></li>
-                    <li><a href="#">Physical Therapy</a></li>
-                    <li><a href="#">Occupational Therapy</a></li>
-                    <li><a href="#">Personal Care</a></li>
-                    <li><a href="#">Alzheimer's Care</a></li>
-                </ul>
-            </div>
-            
-            <div id="resources">
-                <h3>Contact Us</h3>
-                <ul>
-                    <li><a href="tel:6823231138">📞 (682) 323-1138</a></li>
-                    <li><a href="mailto:info@globalhomehealth.org">✉️ info@globalhomehealth.org</a></li>
-                    <li>📍 903 Telluride Drive<br>Arlington, TX 76001</li>
-                    <li><strong>Hours:</strong><br>Mon-Fri: 8 AM - 6 PM<br>24/7 Care Available</li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <p>&copy; 2025 Global Home Health and Durable Services. All rights reserved. | <a href="#" style="color: #888;">Privacy Policy</a> | <a href="#" style="color: #888;">Terms of Service</a></p>
         </div>
     </footer>
-
-    <!-- SCROLL TO TOP -->
-    <div class="scroll-top" id="scrollTop">↑</div>
-
-    <script>
-        // Loading screen
-        window.addEventListener('load', () => {
-            document.getElementById('loading').classList.add('hidden');
-        });
-
-        // Mobile menu
-        const mobileToggle = document.getElementById('mobileToggle');
-        const navMenu = document.getElementById('navMenu');
-        
-        mobileToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            mobileToggle.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
-        });
-
-        // Close menu on link click
-        navMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                mobileToggle.textContent = '☰';
-            });
-        });
-
-        // Header scroll
-        const header = document.getElementById('header');
-        window.addEventListener('scroll', () => {
-            header.classList.toggle('scrolled', window.scrollY > 50);
-        });
-
-        // Scroll to top
-        const scrollTop = document.getElementById('scrollTop');
-        window.addEventListener('scroll', () => {
-            scrollTop.classList.toggle('visible', window.scrollY > 300);
-        });
-
-        scrollTop.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        // FAQ accordion
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const item = question.parentElement;
-                const isActive = item.classList.contains('active');
-                
-                // Close all
-                document.querySelectorAll('.faq-item').forEach(faq => {
-                    faq.classList.remove('active');
-                });
-                
-                // Open clicked if wasn't active
-                if (!isActive) {
-                    item.classList.add('active');
-                }
-            });
-        });
-
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe service cards
-        document.querySelectorAll('.service-card, .testimonial-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(card);
-        });
-    </script>
 </body>
 </html>
