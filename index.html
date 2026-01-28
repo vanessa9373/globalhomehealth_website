@@ -3,206 +3,557 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Complete home health services: skilled nursing, physical therapy, occupational therapy, speech therapy, personal care, companionship. Licensed LHHS and PAS services in Arlington TX.">
-    <title>Our Services | Global Health and Durables Services Arlington TX</title>
-    
+    <meta name="description" content="Global Home Health and Durable Services - Professional home health care and personal assistance services in Arlington, TX. Skilled nursing, therapy, personal care.">
+    <title>Global Home Health and Durable Services | Arlington TX</title>
+
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         :root {
-            --primary-navy: #1B4965;
-            --primary-teal: #3BA99C;
-            --accent-gold: #F4A259;
-            --light-gray: #F5F7FA;
-            --dark-gray: #333333;
+            --primary-blue: #1E88E5;
+            --dark-blue: #1565C0;
+            --light-blue: #E3F2FD;
             --white: #FFFFFF;
+            --black: #000000;
+            --dark-gray: #333333;
+            --medium-gray: #666666;
+            --light-gray: #F5F5F5;
         }
-        
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
             color: var(--dark-gray);
+            background: var(--white);
         }
-        
+
+        /* HEADER */
         .header {
             background: var(--white);
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
-        
-        .container {
+
+        .header-top {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 12px 0;
+        }
+
+        .header-top-content {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
         }
-        
-        .nav-wrapper {
+
+        .contact-info {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .contact-info a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 14px;
+            transition: opacity 0.3s;
+        }
+
+        .contact-info a:hover {
+            opacity: 0.9;
+        }
+
+        .header-main {
+            padding: 15px 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .logo {
-            font-size: 24px;
+            font-size: 20px;
             font-weight: bold;
-            color: var(--primary-navy);
+            color: var(--dark-blue);
+            text-decoration: none;
         }
-        
+
         .nav-menu {
             display: flex;
             list-style: none;
-            gap: 30px;
+            gap: 25px;
+            align-items: center;
         }
-        
+
         .nav-menu a {
             color: var(--dark-gray);
             text-decoration: none;
             font-weight: 500;
+            font-size: 15px;
+            transition: color 0.3s;
         }
-        
-        .page-header {
-            background: linear-gradient(135deg, var(--primary-navy), var(--primary-teal));
-            color: white;
-            padding: 100px 20px 60px;
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: var(--primary-blue);
+        }
+
+        .nav-cta {
+            background: var(--primary-blue);
+            color: var(--white) !important;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 28px;
+            color: var(--dark-gray);
+            cursor: pointer;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(135deg, var(--dark-blue), var(--primary-blue));
+            color: var(--white);
+            padding: 100px 20px;
             text-align: center;
         }
-        
-        .page-header h1 {
-            font-size: 42px;
-            margin-bottom: 15px;
-        }
-        
-        .page-header p {
-            font-size: 18px;
-            max-width: 700px;
+
+        .hero-content {
+            max-width: 900px;
             margin: 0 auto;
         }
-        
-        .service-category {
-            padding: 80px 20px;
+
+        .hero h1 {
+            font-size: clamp(36px, 5vw, 56px);
+            margin-bottom: 20px;
+            line-height: 1.2;
         }
-        
-        .service-category:nth-child(even) {
-            background: var(--light-gray);
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 35px;
+            opacity: 0.95;
         }
-        
-        .category-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        
-        .category-header h2 {
-            font-size: 36px;
-            color: var(--primary-navy);
-            margin-bottom: 15px;
-        }
-        
-        .category-badge {
-            display: inline-block;
-            background: var(--primary-teal);
-            color: white;
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-        
-        .services-detail-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-            margin-top: 40px;
-        }
-        
-        .service-detail-card {
-            background: white;
-            padding: 35px;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            border-left: 4px solid var(--primary-teal);
-        }
-        
-        .service-detail-card h3 {
-            color: var(--primary-navy);
-            font-size: 24px;
-            margin-bottom: 15px;
+
+        .hero-buttons {
             display: flex;
-            align-items: center;
-            gap: 10px;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
         }
-        
-        .service-icon {
-            font-size: 32px;
-        }
-        
-        .service-detail-card h4 {
-            color: var(--primary-teal);
-            margin-top: 20px;
-            margin-bottom: 10px;
-            font-size: 18px;
-        }
-        
-        .service-detail-card ul {
-            margin-left: 20px;
-            margin-bottom: 15px;
-        }
-        
-        .service-detail-card li {
-            margin-bottom: 8px;
-            line-height: 1.6;
-        }
-        
+
         .btn {
             padding: 15px 35px;
             border-radius: 5px;
             text-decoration: none;
             font-weight: 600;
+            font-size: 16px;
             transition: all 0.3s;
             display: inline-block;
         }
-        
+
+        .btn-white {
+            background: var(--white);
+            color: var(--dark-blue);
+        }
+
+        .btn-white:hover {
+            background: var(--light-blue);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--dark-blue);
+        }
+
         .btn-primary {
-            background: var(--accent-gold);
-            color: white;
+            background: var(--primary-blue);
+            color: var(--white);
         }
-        
+
         .btn-primary:hover {
-            background: #E59348;
+            background: var(--dark-blue);
+            transform: translateY(-2px);
         }
-        
-        .cta-box {
-            background: var(--primary-navy);
-            color: white;
-            padding: 50px;
-            border-radius: 10px;
+
+        /* QUICK INFO BAR */
+        .quick-info {
+            background: var(--light-gray);
+            padding: 40px 20px;
+        }
+
+        .quick-info-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
             text-align: center;
-            margin: 60px auto;
         }
-        
-        .cta-box h3 {
-            font-size: 28px;
+
+        .quick-item {
+            padding: 20px;
+        }
+
+        .quick-icon {
+            font-size: 40px;
             margin-bottom: 15px;
         }
-        
-        .footer {
-            background: var(--primary-navy);
-            color: white;
-            padding: 40px 20px 20px;
+
+        .quick-item h3 {
+            color: var(--dark-blue);
+            margin-bottom: 8px;
+            font-size: 18px;
+        }
+
+        .quick-item p {
+            color: var(--medium-gray);
+            font-size: 14px;
+        }
+
+        /* MAIN CONTENT */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-subtitle {
+            color: var(--primary-blue);
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            font-size: clamp(28px, 4vw, 40px);
+            color: var(--black);
+            margin-bottom: 15px;
+        }
+
+        .section-description {
+            font-size: 16px;
+            color: var(--medium-gray);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* SERVICES GRID */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border: 2px solid var(--light-gray);
+            border-radius: 10px;
+            padding: 35px;
+            transition: all 0.3s;
             text-align: center;
         }
-        
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(30,136,229,0.15);
+            border-color: var(--primary-blue);
+        }
+
+        .service-icon {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            color: var(--black);
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .service-card p {
+            color: var(--medium-gray);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .service-card a {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .service-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* WHY CHOOSE US */
+        .why-us {
+            background: var(--light-blue);
+            padding: 80px 20px;
+            margin: 0 -20px;
+        }
+
+        .why-us-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .why-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .why-card h4 {
+            color: var(--dark-blue);
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+
+        .why-card p {
+            color: var(--medium-gray);
+            line-height: 1.7;
+        }
+
+        /* CTA SECTION */
+        .cta-section {
+            background: var(--dark-blue);
+            color: var(--white);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-section h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* TESTIMONIALS */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            border: 2px solid var(--light-gray);
+            border-radius: 10px;
+            padding: 35px;
+        }
+
+        .testimonial-text {
+            font-size: 16px;
+            color: var(--dark-gray);
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .author-info h5 {
+            color: var(--black);
+            margin-bottom: 3px;
+        }
+
+        .author-info span {
+            color: var(--medium-gray);
+            font-size: 14px;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: var(--black);
+            color: var(--white);
+            padding: 60px 20px 30px;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer h3 {
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .footer ul {
+            list-style: none;
+        }
+
+        .footer ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer a:hover {
+            color: var(--white);
+        }
+
+        .footer p {
+            color: rgba(255,255,255,0.7);
+            line-height: 1.7;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            text-align: center;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* MOBILE */
         @media (max-width: 768px) {
-            .services-detail-grid {
+            .mobile-toggle {
+                display: block;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                flex-direction: column;
+                background: var(--white);
+                width: 85%;
+                max-width: 320px;
+                padding: 80px 30px 30px;
+                box-shadow: -5px 0 20px rgba(0,0,0,0.2);
+                transition: right 0.4s ease;
+                height: 100vh;
+                overflow-y: auto;
+                align-items: flex-start;
+            }
+
+            .nav-menu.active {
+                right: 0;
+            }
+
+            .hero {
+                padding: 60px 20px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 280px;
+                text-align: center;
+            }
+
+            .services-grid,
+            .testimonials-grid {
                 grid-template-columns: 1fr;
             }
-            
-            .page-header h1 {
-                font-size: 28px;
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
             }
         }
     </style>
@@ -210,490 +561,287 @@
 <body>
     <!-- HEADER -->
     <header class="header">
-        <div class="container">
-            <nav class="nav-wrapper">
-                <div class="logo">Global Health & Durables Services</div>
-                <ul class="nav-menu">
-                    <li><a href="index.html">Home</a></li>
+        <div class="header-top">
+            <div class="header-top-content">
+                <div class="contact-info">
+                    <a href="tel:6823231138">(682) 323-1138</a>
+                    <a href="mailto:info@globalhomehealth.org">info@globalhomehealth.org</a>
+                </div>
+                <div>Arlington, TX 76001</div>
+            </div>
+        </div>
+
+        <div class="header-main">
+            <div class="nav-container">
+                <a href="index.html" class="logo">Global Home Health</a>
+
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="services.html">Services</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="resources.html">Resources</a></li>
                     <li><a href="careers.html">Careers</a></li>
+                    <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
                 </ul>
-            </nav>
+
+                <button class="mobile-toggle" id="mobileToggle"></button>
+            </div>
         </div>
     </header>
 
-    <!-- PAGE HEADER -->
-    <section class="page-header">
-        <h1>Our Comprehensive Services</h1>
-        <p>Professional Licensed Home Health Services (LHHS) and Personal Assistance Services (PAS) delivering exceptional care in Arlington, Texas and surrounding communities.</p>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Compassionate Home Health Care in Arlington, Texas</h1>
+            <p>Professional skilled nursing, therapy, and personal care services delivered with compassion in the comfort of your home.</p>
+            <div class="hero-buttons">
+                <a href="contact.html" class="btn btn-white">Request Free Consultation</a>
+                <a href="tel:6823231138" class="btn btn-outline">Call (682) 323-1138</a>
+            </div>
+        </div>
     </section>
 
-    <!-- LICENSED HOME HEALTH SERVICES (LHHS) -->
-    <section class="service-category">
-        <div class="container">
-            <div class="category-header">
-                <span class="category-badge">LICENSED HOME HEALTH SERVICES (LHHS)</span>
-                <h2>Medical Care Delivered by Licensed Professionals</h2>
-                <p>Comprehensive skilled nursing and therapy services prescribed by your physician and delivered in the comfort of your home.</p>
+    <!-- QUICK INFO BAR -->
+    <section class="quick-info">
+        <div class="quick-info-grid">
+            <div class="quick-item">
+                <div class="quick-icon">🏥</div>
+                <h3>Texas HHSC Licensed</h3>
+                <p>Fully licensed home health agency</p>
+            </div>
+            <div class="quick-item">
+                <div class="quick-icon">⏰</div>
+                <h3>24/7 Care Available</h3>
+                <p>Round-the-clock support when you need it</p>
+            </div>
+            <div class="quick-item">
+                <div class="quick-icon">👥</div>
+                <h3>Experienced Staff</h3>
+                <p>Licensed nurses and certified caregivers</p>
+            </div>
+            <div class="quick-item">
+                <div class="quick-icon">❤️</div>
+                <h3>Compassionate Care</h3>
+                <p>Personalized attention for every patient</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- SERVICES SECTION -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-subtitle">Our Services</div>
+                <h2 class="section-title">Comprehensive Home Health Care</h2>
+                <p class="section-description">We offer a full range of Licensed Home Health Services (LHHS) and Personal Assistance Services (PAS) to meet your unique care needs.</p>
             </div>
 
-            <div class="services-detail-grid">
-                <!-- Skilled Nursing Care -->
-                <div class="service-detail-card" id="skilled-nursing">
-                    <h3><span class="service-icon">🏥</span> Skilled Nursing Care</h3>
-                    <p>Registered Nurses (RN) and Licensed Vocational Nurses (LVN) provide professional medical care services including:</p>
-                    
-                    <h4>Clinical Services:</h4>
-                    <ul>
-                        <li>Wound care and dressing changes</li>
-                        <li>IV therapy and medication administration</li>
-                        <li>Catheter care and management</li>
-                        <li>Vital signs monitoring</li>
-                        <li>Injection administration</li>
-                        <li>Blood glucose monitoring</li>
-                    </ul>
-                    
-                    <h4>Disease Management:</h4>
-                    <ul>
-                        <li>Chronic disease monitoring (diabetes, heart failure, COPD)</li>
-                        <li>Post-surgical care and recovery</li>
-                        <li>Pain management</li>
-                        <li>Medication management and education</li>
-                        <li>Care plan development and coordination</li>
-                        <li>Patient and family education</li>
-                    </ul>
-                    
-                    <h4>Supervision & Coordination:</h4>
-                    <ul>
-                        <li>Coordination with physicians</li>
-                        <li>Home health aide supervision</li>
-                        <li>Emergency response and assessment</li>
-                        <li>Progress monitoring and reporting</li>
-                    </ul>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🏥</div>
+                    <h3>Skilled Nursing</h3>
+                    <p>Professional nursing care including wound care, IV therapy, medication management, and chronic disease monitoring.</p>
+                    <a href="services.html">Learn More →</a>
                 </div>
 
-                <!-- Physical Therapy -->
-                <div class="service-detail-card" id="physical-therapy">
-                    <h3><span class="service-icon">🦵</span> Physical Therapy</h3>
-                    <p>Licensed physical therapists provide rehabilitation services to restore movement, reduce pain, and improve quality of life:</p>
-                    
-                    <h4>Rehabilitation Services:</h4>
-                    <ul>
-                        <li>Post-surgical rehabilitation</li>
-                        <li>Stroke recovery and neurological rehab</li>
-                        <li>Orthopedic rehabilitation</li>
-                        <li>Balance and gait training</li>
-                        <li>Strength and endurance building</li>
-                        <li>Mobility and transfer training</li>
-                    </ul>
-                    
-                    <h4>Specialized Treatment:</h4>
-                    <ul>
-                        <li>Pain management techniques</li>
-                        <li>Manual therapy and joint mobilization</li>
-                        <li>Therapeutic exercises</li>
-                        <li>Fall prevention strategies</li>
-                        <li>Home safety assessments</li>
-                        <li>Assistive device training</li>
-                    </ul>
-                    
-                    <h4>Patient Education:</h4>
-                    <ul>
-                        <li>Home exercise programs</li>
-                        <li>Injury prevention education</li>
-                        <li>Body mechanics training</li>
-                        <li>Self-management strategies</li>
-                    </ul>
+                <div class="service-card">
+                    <div class="service-icon">🦵</div>
+                    <h3>Physical Therapy</h3>
+                    <p>Rehabilitation services to restore movement, reduce pain, and improve strength and mobility.</p>
+                    <a href="services.html">Learn More →</a>
                 </div>
 
-                <!-- Occupational Therapy -->
-                <div class="service-detail-card" id="occupational-therapy">
-                    <h3><span class="service-icon">✋</span> Occupational Therapy</h3>
-                    <p>Licensed occupational therapists help restore independence in daily living activities:</p>
-                    
-                    <h4>Activities of Daily Living (ADL) Training:</h4>
-                    <ul>
-                        <li>Bathing and grooming skills</li>
-                        <li>Dressing techniques and adaptive equipment</li>
-                        <li>Eating and feeding strategies</li>
-                        <li>Toileting and continence management</li>
-                        <li>Personal hygiene maintenance</li>
-                    </ul>
-                    
-                    <h4>Instrumental Activities (IADL):</h4>
-                    <ul>
-                        <li>Meal preparation and cooking safety</li>
-                        <li>Medication management</li>
-                        <li>Money management skills</li>
-                        <li>Communication device use</li>
-                        <li>Transportation planning</li>
-                    </ul>
-                    
-                    <h4>Specialized Services:</h4>
-                    <ul>
-                        <li>Fine motor skills rehabilitation</li>
-                        <li>Cognitive retraining</li>
-                        <li>Visual perception training</li>
-                        <li>Home modification recommendations</li>
-                        <li>Adaptive equipment assessment</li>
-                        <li>Energy conservation techniques</li>
-                    </ul>
+                <div class="service-card">
+                    <div class="service-icon">✋</div>
+                    <h3>Occupational Therapy</h3>
+                    <p>Help regaining independence in daily activities like bathing, dressing, and meal preparation.</p>
+                    <a href="services.html">Learn More →</a>
                 </div>
 
-                <!-- Speech Therapy -->
-                <div class="service-detail-card" id="speech-therapy">
-                    <h3><span class="service-icon">💬</span> Speech-Language Therapy</h3>
-                    <p>Licensed speech-language pathologists provide specialized treatment for communication and swallowing disorders:</p>
-                    
-                    <h4>Speech & Language Services:</h4>
-                    <ul>
-                        <li>Articulation and pronunciation therapy</li>
-                        <li>Aphasia treatment (post-stroke language)</li>
-                        <li>Voice therapy and rehabilitation</li>
-                        <li>Fluency and stuttering treatment</li>
-                        <li>Language comprehension improvement</li>
-                    </ul>
-                    
-                    <h4>Swallowing & Safety:</h4>
-                    <ul>
-                        <li>Dysphagia assessment and treatment</li>
-                        <li>Safe swallowing strategies</li>
-                        <li>Diet modification recommendations</li>
-                        <li>Aspiration risk management</li>
-                        <li>Nutrition and hydration support</li>
-                    </ul>
-                    
-                    <h4>Cognitive-Communication:</h4>
-                    <ul>
-                        <li>Memory strategies and training</li>
-                        <li>Problem-solving skills</li>
-                        <li>Attention and focus improvement</li>
-                        <li>Social communication skills</li>
-                    </ul>
+                <div class="service-card">
+                    <div class="service-icon">💬</div>
+                    <h3>Speech Therapy</h3>
+                    <p>Treatment for communication disorders, swallowing difficulties, and cognitive rehabilitation.</p>
+                    <a href="services.html">Learn More →</a>
                 </div>
 
-                <!-- Medical Social Services -->
-                <div class="service-detail-card">
-                    <h3><span class="service-icon">🤝</span> Medical Social Services</h3>
-                    <p>Licensed medical social workers provide psychosocial support and resource coordination:</p>
-                    
-                    <h4>Counseling & Support:</h4>
-                    <ul>
-                        <li>Emotional support and counseling</li>
-                        <li>Coping strategies for illness/disability</li>
-                        <li>Family dynamics assessment</li>
-                        <li>Grief and loss counseling</li>
-                        <li>Mental health referrals</li>
-                    </ul>
-                    
-                    <h4>Resource Coordination:</h4>
-                    <ul>
-                        <li>Community resource connection</li>
-                        <li>Financial assistance programs</li>
-                        <li>Long-term care planning</li>
-                        <li>Transportation services coordination</li>
-                        <li>Caregiver support and education</li>
-                    </ul>
-                    
-                    <h4>Care Planning:</h4>
-                    <ul>
-                        <li>Advance care planning assistance</li>
-                        <li>Discharge planning support</li>
-                        <li>Crisis intervention</li>
-                        <li>Healthcare decision-making support</li>
-                    </ul>
+                <div class="service-card">
+                    <div class="service-icon">❤️</div>
+                    <h3>Personal Care</h3>
+                    <p>Compassionate assistance with bathing, grooming, dressing, and daily living activities.</p>
+                    <a href="services.html">Learn More →</a>
                 </div>
 
-                <!-- Home Health Aides -->
-                <div class="service-detail-card">
-                    <h3><span class="service-icon">👤</span> Home Health Aides (Supervised)</h3>
-                    <p>Trained home health aides provide personal care under the supervision of a registered nurse:</p>
-                    
-                    <h4>Personal Care Services:</h4>
-                    <ul>
-                        <li>Bathing and personal hygiene</li>
-                        <li>Dressing and grooming assistance</li>
-                        <li>Toileting and continence care</li>
-                        <li>Mobility and transfer assistance</li>
-                        <li>Positioning and turning</li>
-                    </ul>
-                    
-                    <h4>Health Monitoring:</h4>
-                    <ul>
-                        <li>Vital signs measurement</li>
-                        <li>Intake and output recording</li>
-                        <li>Skin condition observation</li>
-                        <li>Reporting changes to nurse</li>
-                    </ul>
-                    
-                    <h4>Support Services:</h4>
-                    <ul>
-                        <li>Light housekeeping related to care</li>
-                        <li>Meal preparation assistance</li>
-                        <li>Medication reminders (under nurse direction)</li>
-                        <li>Exercise program assistance</li>
-                    </ul>
+                <div class="service-card">
+                    <div class="service-icon">🧠</div>
+                    <h3>Alzheimer's & Dementia Care</h3>
+                    <p>Specialized care for individuals with memory challenges, including safety supervision and engagement.</p>
+                    <a href="services.html">Learn More →</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- WHY CHOOSE US -->
+    <section class="why-us">
+        <div class="why-us-content">
+            <div class="section-header">
+                <div class="section-subtitle">Why Choose Us</div>
+                <h2 class="section-title">Trusted Home Health Care</h2>
+                <p class="section-description">We're committed to providing exceptional care that makes a real difference in our patients' lives.</p>
+            </div>
+
+            <div class="why-grid">
+                <div class="why-card">
+                    <h4>Personalized Care Plans</h4>
+                    <p>Every patient receives a customized care plan developed specifically for their unique needs and goals.</p>
+                </div>
+                <div class="why-card">
+                    <h4>Licensed Professionals</h4>
+                    <p>Our team consists of licensed nurses, certified therapists, and trained caregivers with ongoing education.</p>
+                </div>
+                <div class="why-card">
+                    <h4>Family Communication</h4>
+                    <p>We keep families informed and involved in care decisions with regular updates and coordination.</p>
+                </div>
+                <div class="why-card">
+                    <h4>HIPAA Compliant</h4>
+                    <p>Your privacy is protected with strict HIPAA compliance and secure health information systems.</p>
+                </div>
+                <div class="why-card">
+                    <h4>Insurance Assistance</h4>
+                    <p>We work with Medicare, Medicaid, and most insurance providers to help you access the care you need.</p>
+                </div>
+                <div class="why-card">
+                    <h4>Local & Responsive</h4>
+                    <p>Based in Arlington, we serve our local community with prompt, responsive care when you need it.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- PERSONAL ASSISTANCE SERVICES (PAS) -->
-    <section class="service-category">
-        <div class="container">
-            <div class="category-header">
-                <span class="category-badge">PERSONAL ASSISTANCE SERVICES (PAS)</span>
-                <h2>Non-Medical Home Care & Support</h2>
-                <p>Compassionate personal care assistance helping individuals maintain independence and quality of life at home.</p>
+    <!-- TESTIMONIALS -->
+    <section class="main-content">
+        <div class="section">
+            <div class="section-header">
+                <div class="section-subtitle">Testimonials</div>
+                <h2 class="section-title">What Families Say</h2>
+                <p class="section-description">Hear from families who have experienced our compassionate care.</p>
             </div>
 
-            <div class="services-detail-grid">
-                <!-- Personal Care -->
-                <div class="service-detail-card" id="personal-care">
-                    <h3><span class="service-icon">❤️</span> Personal Care Assistance</h3>
-                    <p>Respectful, dignified assistance with activities of daily living:</p>
-                    
-                    <h4>Hygiene & Grooming:</h4>
-                    <ul>
-                        <li>Bathing, showering, and bed baths</li>
-                        <li>Hair washing and styling</li>
-                        <li>Oral care and denture care</li>
-                        <li>Shaving assistance</li>
-                        <li>Nail care and skin care</li>
-                    </ul>
-                    
-                    <h4>Dressing & Mobility:</h4>
-                    <ul>
-                        <li>Clothing selection and dressing</li>
-                        <li>Transfer assistance (bed, chair, toilet)</li>
-                        <li>Walking support and fall prevention</li>
-                        <li>Use of mobility aids</li>
-                    </ul>
-                    
-                    <h4>Toileting & Feeding:</h4>
-                    <ul>
-                        <li>Toileting assistance</li>
-                        <li>Incontinence care</li>
-                        <li>Feeding and eating assistance</li>
-                        <li>Nutrition monitoring</li>
-                    </ul>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"The nurses from Global Home Health have been amazing with my mother. They're professional, caring, and always go above and beyond. I can't thank them enough for the peace of mind they've given our family."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">M</div>
+                        <div class="author-info">
+                            <h5>Maria S.</h5>
+                            <span>Daughter of Patient</span>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Companionship -->
-                <div class="service-detail-card" id="companionship">
-                    <h3><span class="service-icon">👥</span> Companionship & Emotional Support</h3>
-                    <p>Meaningful engagement and social interaction to enhance wellbeing:</p>
-                    
-                    <h4>Social Engagement:</h4>
-                    <ul>
-                        <li>Friendly conversation and active listening</li>
-                        <li>Playing games, cards, and puzzles</li>
-                        <li>Reading aloud and audiobooks</li>
-                        <li>Watching shows and discussing topics</li>
-                        <li>Arts and crafts activities</li>
-                        <li>Music appreciation</li>
-                    </ul>
-                    
-                    <h4>Community Connection:</h4>
-                    <ul>
-                        <li>Accompaniment to social events</li>
-                        <li>Church or worship service attendance</li>
-                        <li>Video calls with family/friends</li>
-                        <li>Maintaining social relationships</li>
-                    </ul>
-                    
-                    <h4>Emotional Support:</h4>
-                    <ul>
-                        <li>Compassionate presence</li>
-                        <li>Encouragement and motivation</li>
-                        <li>Reducing loneliness and isolation</li>
-                        <li>Mental stimulation activities</li>
-                    </ul>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"After my surgery, I was worried about recovery. The physical therapist they sent was incredible - patient, knowledgeable, and encouraging. I'm back on my feet thanks to their excellent care."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">R</div>
+                        <div class="author-info">
+                            <h5>Robert T.</h5>
+                            <span>Patient</span>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Alzheimer's & Dementia Care -->
-                <div class="service-detail-card">
-                    <h3><span class="service-icon">🧠</span> Alzheimer's & Dementia Care</h3>
-                    <p>Specialized, patient-centered care for individuals with memory challenges:</p>
-                    
-                    <h4>Specialized Approach:</h4>
-                    <ul>
-                        <li>Dementia-specific training</li>
-                        <li>Person-centered care philosophy</li>
-                        <li>Routine and structure maintenance</li>
-                        <li>Validation therapy techniques</li>
-                        <li>Redirection strategies</li>
-                    </ul>
-                    
-                    <h4>Safety & Supervision:</h4>
-                    <ul>
-                        <li>Continuous monitoring</li>
-                        <li>Wandering prevention</li>
-                        <li>Fall risk reduction</li>
-                        <li>Safe environment maintenance</li>
-                        <li>Emergency preparedness</li>
-                    </ul>
-                    
-                    <h4>Engagement & Support:</h4>
-                    <ul>
-                        <li>Memory-appropriate activities</li>
-                        <li>Cognitive stimulation</li>
-                        <li>Reminiscence therapy</li>
-                        <li>Music and art therapy</li>
-                        <li>Family support and education</li>
-                    </ul>
-                </div>
-
-                <!-- Meal Preparation -->
-                <div class="service-detail-card">
-                    <h3><span class="service-icon">🍽️</span> Meal Preparation & Nutrition</h3>
-                    <p>Nutritious meal planning and preparation supporting health and wellbeing:</p>
-                    
-                    <h4>Meal Services:</h4>
-                    <ul>
-                        <li>Custom meal planning</li>
-                        <li>Grocery shopping assistance</li>
-                        <li>Fresh meal preparation</li>
-                        <li>Special diet accommodation</li>
-                        <li>Cultural food preferences</li>
-                        <li>Kitchen cleanup</li>
-                    </ul>
-                    
-                    <h4>Nutritional Support:</h4>
-                    <ul>
-                        <li>Diabetic-friendly meals</li>
-                        <li>Low-sodium options</li>
-                        <li>Heart-healthy cooking</li>
-                        <li>Texture-modified foods</li>
-                        <li>Hydration monitoring</li>
-                    </ul>
-                </div>
-
-                <!-- Homemaking -->
-                <div class="service-detail-card">
-                    <h3><span class="service-icon">🏠</span> Homemaking & Household Support</h3>
-                    <p>Light housekeeping and home management maintaining a safe, comfortable environment:</p>
-                    
-                    <h4>Housekeeping Services:</h4>
-                    <ul>
-                        <li>Light cleaning and tidying</li>
-                        <li>Vacuuming and floor care</li>
-                        <li>Dusting and surface cleaning</li>
-                        <li>Laundry washing, drying, folding</li>
-                        <li>Bed making and linen changes</li>
-                        <li>Dish washing and kitchen maintenance</li>
-                    </ul>
-                    
-                    <h4>Organization & Safety:</h4>
-                    <ul>
-                        <li>Decluttering and organizing</li>
-                        <li>Trash and recycling removal</li>
-                        <li>Safety hazard identification</li>
-                        <li>Home environment monitoring</li>
-                    </ul>
-                </div>
-
-                <!-- Medication Reminders & Transportation -->
-                <div class="service-detail-card">
-                    <h3><span class="service-icon">💊</span> Medication Reminders & Transportation</h3>
-                    <p>Support with medication schedules and safe transportation:</p>
-                    
-                    <h4>Medication Support:</h4>
-                    <ul>
-                        <li>Verbal medication reminders</li>
-                        <li>Assistance opening containers</li>
-                        <li>Pill organizer setup</li>
-                        <li>Adherence monitoring</li>
-                        <li>Communication with family</li>
-                    </ul>
-                    
-                    <p><em>Note: Personal care attendants provide reminders only. Medication administration requires licensed nursing.</em></p>
-                    
-                    <h4>Transportation Services:</h4>
-                    <ul>
-                        <li>Medical appointment transportation</li>
-                        <li>Grocery shopping trips</li>
-                        <li>Pharmacy visits</li>
-                        <li>Social and recreational outings</li>
-                        <li>Errands and personal needs</li>
-                    </ul>
-                </div>
-
-                <!-- Respite Care -->
-                <div class="service-detail-card" id="respite">
-                    <h3><span class="service-icon">⏰</span> Respite Care</h3>
-                    <p>Temporary relief for family caregivers providing much-needed rest and support:</p>
-                    
-                    <h4>Flexible Options:</h4>
-                    <ul>
-                        <li>A few hours for personal time</li>
-                        <li>Full day coverage</li>
-                        <li>Overnight care</li>
-                        <li>Extended weekend relief</li>
-                        <li>Vacation coverage</li>
-                        <li>Regular scheduled breaks</li>
-                    </ul>
-                    
-                    <h4>Caregiver Benefits:</h4>
-                    <ul>
-                        <li>Reduced stress and burnout</li>
-                        <li>Time for self-care</li>
-                        <li>Personal appointments</li>
-                        <li>Social activities</li>
-                        <li>Rest and recharge</li>
-                        <li>Peace of mind</li>
-                    </ul>
-                </div>
-
-                <!-- 24/7 Care Options -->
-                <div class="service-detail-card">
-                    <h3><span class="service-icon">🌙</span> 24/7 Live-In Care</h3>
-                    <p>Around-the-clock personal assistance for comprehensive care needs:</p>
-                    
-                    <h4>Continuous Support:</h4>
-                    <ul>
-                        <li>24-hour caregiver presence</li>
-                        <li>Overnight supervision</li>
-                        <li>Emergency response readiness</li>
-                        <li>Comprehensive personal care</li>
-                        <li>All meals prepared</li>
-                        <li>Light housekeeping</li>
-                    </ul>
-                    
-                    <h4>Live-In Arrangement:</h4>
-                    <ul>
-                        <li>Private sleeping quarters for caregiver</li>
-                        <li>Regular caregiver rotation</li>
-                        <li>Family coordination</li>
-                        <li>24/7 peace of mind</li>
-                    </ul>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Finding quality care for my father with dementia was challenging until we found Global Home Health. Their caregivers understand his needs and treat him with such dignity and respect."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">J</div>
+                        <div class="author-info">
+                            <h5>Jennifer L.</h5>
+                            <span>Daughter of Patient</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA BOX -->
-    <div class="container">
-        <div class="cta-box">
-            <h3>Ready to Learn More About Our Services?</h3>
-            <p style="margin-bottom: 25px;">Contact us today for a free consultation and personalized care assessment.</p>
-            <a href="contact.html" class="btn btn-primary">Request Free Consultation</a>
-            <span style="margin: 0 15px; color: var(--accent-gold);">or</span>
-            <a href="tel:6823231138" class="btn btn-primary">Call (682) 323-1138</a>
+    <!-- CTA SECTION -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Get Started?</h2>
+            <p>Contact us today for a free consultation and personalized care assessment. We're here to help you and your family.</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn btn-white">Request Free Consultation</a>
+                <a href="tel:6823231138" class="btn btn-outline">Call (682) 323-1138</a>
+            </div>
         </div>
-    </div>
+    </section>
 
     <!-- FOOTER -->
     <footer class="footer">
-        <div class="container">
-            <p><strong>Global Health and Durables Services</strong></p>
-            <p>903 Telluride Drive, Arlington, TX 76001</p>
-            <p>Phone: (682) 323-1138 | Email: info@globalhomehealth.org</p>
-            <p style="margin-top: 20px;">&copy; 2025 Global Health and Durables Services. Licensed by Texas HHSC.</p>
-            <p><a href="privacy.html" style="color: var(--accent-gold);">Privacy Policy</a> | <a href="hipaa.html" style="color: var(--accent-gold);">HIPAA Notice</a></p>
+        <div class="footer-grid">
+            <div>
+                <h3>Global Home Health</h3>
+                <p>Professional home health and personal care services in Arlington, Texas.</p>
+                <br>
+                <p><strong>Texas HHSC Licensed</strong></p>
+            </div>
+
+            <div>
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="services.html">Skilled Nursing</a></li>
+                    <li><a href="services.html">Physical Therapy</a></li>
+                    <li><a href="services.html">Personal Care</a></li>
+                    <li><a href="services.html">Alzheimer's Care</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Contact Us</h3>
+                <ul>
+                    <li><a href="tel:6823231138">(682) 323-1138</a></li>
+                    <li><a href="mailto:info@globalhomehealth.org">info@globalhomehealth.org</a></li>
+                    <li>903 Telluride Drive<br>Arlington, TX 76001</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Global Home Health and Durable Services. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileToggle.textContent = navMenu.classList.contains('active') ? 'X' : '';
+        });
+
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileToggle.textContent = '';
+            });
+        });
+    </script>
 </body>
 </html>

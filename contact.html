@@ -3,200 +3,462 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact Global Health & Durable Services for home health and personal care services in Arlington TX. Request free consultation. Call (682) 323-1138.">
-    <title>Contact Us | Global Health & Durable Services</title>
-    
+    <meta name="description" content="Contact Global Home Health and Durable Services for home health and personal care services in Arlington TX. Request free consultation. Call (682) 323-1138.">
+    <title>Contact Us | Global Home Health and Durable Services</title>
+
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-   :root{
---primary-navy:#0F3E5C;
---primary-blue:#3F8FB3;
---light-blue:#8EC1D9;
---dark-gray:#1F1F1F;
---light-gray:#F5F7FA;
---white:#FFFFFF;
-}
-        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #1E88E5;
+            --dark-blue: #1565C0;
+            --light-blue: #E3F2FD;
+            --white: #FFFFFF;
+            --black: #000000;
+            --dark-gray: #333333;
+            --medium-gray: #666666;
+            --light-gray: #F5F5F5;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
             color: var(--dark-gray);
+            background: var(--white);
         }
-        
+
+        /* HEADER */
         .header {
-            background: white;
+            background: var(--white);
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
-        
-        .container {
+
+        .header-top {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 12px 0;
+        }
+
+        .header-top-content {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
         }
-        
+
+        .contact-info-header {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .contact-info-header a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 14px;
+            transition: opacity 0.3s;
+        }
+
+        .contact-info-header a:hover {
+            opacity: 0.9;
+        }
+
+        .header-main {
+            padding: 15px 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
         .logo {
-            font-size: 24px;
+            font-size: 20px;
             font-weight: bold;
-            color: var(--primary-navy);
+            color: var(--dark-blue);
+            text-decoration: none;
         }
-        
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: var(--dark-gray);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: var(--primary-blue);
+        }
+
+        .nav-cta {
+            background: var(--primary-blue);
+            color: var(--white) !important;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 28px;
+            color: var(--dark-gray);
+            cursor: pointer;
+        }
+
+        /* PAGE HEADER */
         .page-header {
-            background: linear-gradient(135deg, var(--primary-navy), var(--primary-blue));
-            color: white;
-            padding: 100px 20px 60px;
+            background: linear-gradient(135deg, var(--dark-blue), var(--primary-blue));
+            color: var(--white);
+            padding: 80px 20px 60px;
             text-align: center;
         }
-        
+
         .page-header h1 {
-            font-size: 42px;
+            font-size: clamp(32px, 5vw, 48px);
             margin-bottom: 15px;
         }
-        
-        .contact-section {
-            padding: 80px 20px;
+
+        .page-header p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.95;
         }
-        
+
+        /* BREADCRUMB */
+        .breadcrumb {
+            background: var(--light-gray);
+            padding: 15px 20px;
+        }
+
+        .breadcrumb-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: 10px;
+            font-size: 14px;
+        }
+
+        .breadcrumb a {
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        /* MAIN CONTENT */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* CONTACT GRID */
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            margin-top: 40px;
+            gap: 50px;
         }
-        
+
+        /* CONTACT INFO */
         .contact-info-box {
             background: var(--light-gray);
             padding: 40px;
-            border-radius: 10px;
+            border-radius: 15px;
         }
-        
-        .contact-info-box h3 {
-            color: var(--primary-navy);
-            margin-bottom: 25px;
-            font-size: 24px;
+
+        .contact-info-box h2 {
+            color: var(--dark-blue);
+            margin-bottom: 30px;
+            font-size: 28px;
         }
-        
+
         .info-item {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
-        
+
         .info-icon {
             font-size: 28px;
-            margin-right: 15px;
+            margin-right: 20px;
             min-width: 40px;
         }
-        
-        .info-content h4 {
+
+        .info-content h3 {
             color: var(--primary-blue);
             margin-bottom: 5px;
             font-size: 18px;
         }
-        
+
         .info-content p {
             color: var(--dark-gray);
         }
-        
+
+        .info-content a {
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        .info-content a:hover {
+            text-decoration: underline;
+        }
+
+        /* CONTACT FORM */
         .form-container {
-            background: white;
+            background: var(--white);
             padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.1);
         }
-        
-        .form-container h3 {
-            color: var(--primary-navy);
-            margin-bottom: 25px;
-            font-size: 24px;
+
+        .form-container h2 {
+            color: var(--dark-blue);
+            margin-bottom: 10px;
+            font-size: 28px;
         }
-        
+
+        .form-container > p {
+            color: var(--medium-gray);
+            margin-bottom: 30px;
+        }
+
         .form-group {
             margin-bottom: 20px;
         }
-        
+
         .form-group label {
             display: block;
             margin-bottom: 8px;
             font-weight: 600;
             color: var(--dark-gray);
         }
-        
+
         .form-group input,
         .form-group select,
         .form-group textarea {
             width: 100%;
-            padding: 12px;
+            padding: 12px 15px;
             border: 2px solid #E0E0E0;
-            border-radius: 5px;
+            border-radius: 8px;
             font-family: inherit;
             font-size: 15px;
+            transition: border-color 0.3s;
         }
-        
+
         .form-group input:focus,
         .form-group select:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: var(--primary-navy);
+            border-color: var(--primary-blue);
         }
-        
+
         .form-group textarea {
             min-height: 120px;
             resize: vertical;
         }
-        
+
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
         }
-        
-        .btn-submit {
-            background: var(  --dark-gray);
-            color: white;
-            padding: 15px 40px;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        
-        .btn-submit:hover {
-            background: #E59348;
-        }
-        
+
         .required {
             color: red;
         }
-        
+
+        .btn-submit {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 15px 40px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+        }
+
+        .btn-submit:hover {
+            background: var(--dark-blue);
+            transform: translateY(-2px);
+        }
+
         .privacy-note {
-            background: #FFF3CD;
-            border-left: 4px solid var(  --dark-gray);
+            background: var(--light-blue);
+            border-left: 4px solid var(--primary-blue);
             padding: 15px;
             margin-top: 20px;
             font-size: 14px;
+            border-radius: 0 8px 8px 0;
         }
-        
-        .map-section {
+
+        .privacy-note a {
+            color: var(--primary-blue);
+        }
+
+        /* SERVICE AREA */
+        .service-area {
+            background: var(--light-blue);
             padding: 60px 20px;
-            background: var(--light-gray);
+            margin-top: 60px;
         }
-        
-        .map-container {
-            background: white;
-            padding: 40px;
-            border-radius: 10px;
+
+        .service-area-content {
+            max-width: 800px;
+            margin: 0 auto;
             text-align: center;
         }
-        
+
+        .service-area h2 {
+            color: var(--dark-blue);
+            margin-bottom: 20px;
+            font-size: 32px;
+        }
+
+        .service-area p {
+            color: var(--medium-gray);
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+
+        .service-area-cta {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        .service-area-cta p {
+            margin-bottom: 0;
+            font-size: 18px;
+        }
+
+        .service-area-cta a {
+            color: var(--primary-blue);
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .service-area-cta a:hover {
+            text-decoration: underline;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: var(--black);
+            color: var(--white);
+            padding: 60px 20px 30px;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer h3 {
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .footer ul {
+            list-style: none;
+        }
+
+        .footer ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer a:hover {
+            color: var(--white);
+        }
+
+        .footer p {
+            color: rgba(255,255,255,0.7);
+            line-height: 1.7;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            text-align: center;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* MOBILE */
         @media (max-width: 768px) {
+            .mobile-toggle {
+                display: block;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                flex-direction: column;
+                background: var(--white);
+                width: 85%;
+                max-width: 320px;
+                padding: 80px 30px 30px;
+                box-shadow: -5px 0 20px rgba(0,0,0,0.2);
+                transition: right 0.4s ease;
+                height: 100vh;
+                overflow-y: auto;
+                align-items: flex-start;
+            }
+
+            .nav-menu.active {
+                right: 0;
+            }
+
             .contact-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .form-row {
                 grid-template-columns: 1fr;
             }
@@ -206,8 +468,31 @@
 <body>
     <!-- HEADER -->
     <header class="header">
-        <div class="container">
-            <div class="logo">Global Health & Durables Services</div>
+        <div class="header-top">
+            <div class="header-top-content">
+                <div class="contact-info-header">
+                    <a href="tel:6823231138">(682) 323-1138</a>
+                    <a href="mailto:info@globalhomehealth.org">info@globalhomehealth.org</a>
+                </div>
+                <div>Arlington, TX 76001</div>
+            </div>
+        </div>
+
+        <div class="header-main">
+            <div class="nav-container">
+                <a href="index.html" class="logo">Global Home Health</a>
+
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="contact.html" class="nav-cta active">Contact Us</a></li>
+                </ul>
+
+                <button class="mobile-toggle" id="mobileToggle"></button>
+            </div>
         </div>
     </header>
 
@@ -217,205 +502,240 @@
         <p>We're here to answer your questions and help you get started with exceptional home care services.</p>
     </section>
 
-    <!-- CONTACT SECTION -->
-    <section class="contact-section">
-        <div class="container">
-            <div class="contact-grid">
-                <!-- Contact Information -->
-                <div class="contact-info-box">
-                    <h3>Get In Touch</h3>
-                    
-                    <div class="info-item">
-                        <div class="info-icon">📞</div>
-                        <div class="info-content">
-                            <h4>Phone</h4>
-                            <p><strong><a href="tel:6823231138" style="color: var(--primary-blue); text-decoration: none;">(682) 323-1138</a></strong></p>
-                            <p style="font-size: 14px;">Monday-Friday: 8:00 AM - 6:00 PM<br>
+    <!-- BREADCRUMB -->
+    <div class="breadcrumb">
+        <div class="breadcrumb-content">
+            <a href="index.html">Home</a>
+            <span>></span>
+            <span>Contact</span>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        <div class="contact-grid">
+
+            <!-- Contact Information -->
+            <div class="contact-info-box">
+                <h2>Get In Touch</h2>
+
+                <div class="info-item">
+                    <div class="info-icon">📞</div>
+                    <div class="info-content">
+                        <h3>Phone</h3>
+                        <p><strong><a href="tel:6823231138">(682) 323-1138</a></strong></p>
+                        <p style="font-size: 14px; color: var(--medium-gray);">
+                            Monday-Friday: 8:00 AM - 6:00 PM<br>
                             Saturday: 9:00 AM - 3:00 PM<br>
-                            24/7 Care Available</p>
-                        </div>
-                    </div>
-                    
-                    <div class="info-item">
-                        <div class="info-icon">✉️</div>
-                        <div class="info-content">
-                            <h4>Email</h4>
-                            <p><a href="mailto:info@globalhomehealth.org" style="color: var(--primary-blue); text-decoration: none;">info@globalhomehealth.org</a></p>
-                            <p style="font-size: 14px;">We respond within 24 business hours</p>
-                        </div>
-                    </div>
-                    
-                    <div class="info-item">
-                        <div class="info-icon">📍</div>
-                        <div class="info-content">
-                            <h4>Address</h4>
-                            <p><strong>Global Health & Durable Services</strong><br>
-                            903 Telluride Drive<br>
-                            Arlington, TX 76001</p>
-                        </div>
-                    </div>
-                    
-                    <div class="info-item">
-                        <div class="info-icon">🏥</div>
-                        <div class="info-content">
-                            <h4>Service Area</h4>
-                            <p>Arlington, Grand Prairie, Mansfield, Fort Worth, and surrounding Tarrant County communities</p>
-                        </div>
-                    </div>
-                    
-                    <div class="info-item">
-                        <div class="info-icon">⚡</div>
-                        <div class="info-content">
-                            <h4>Emergency Contact</h4>
-                            <p>For current clients with urgent needs after hours, call our main number and select the emergency option.</p>
-                        </div>
+                            24/7 Care Available
+                        </p>
                     </div>
                 </div>
 
-                <!-- Contact Form -->
-                <div class="form-container">
-                    <h3>Request Free Consultation</h3>
-                    <p style="margin-bottom: 25px;">Fill out the form below and we'll contact you within 24 hours to discuss your care needs.</p>
-                    
-                    <form id="contactForm" action="#" method="post">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>First Name <span class="required">*</span></label>
-                                <input type="text" name="firstName" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label>Last Name <span class="required">*</span></label>
-                                <input type="text" name="lastName" required>
-                            </div>
-                        </div>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>Email <span class="required">*</span></label>
-                                <input type="email" name="email" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label>Phone <span class="required">*</span></label>
-                                <input type="tel" name="phone" required>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Zip Code</label>
-                            <input type="text" name="zipCode" maxlength="10">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Type of Service Needed <span class="required">*</span></label>
-                            <select name="serviceType" required>
-                                <option value="">-- Select Service --</option>
-                                <option value="skilled-nursing">Skilled Nursing Care (LHHS)</option>
-                                <option value="physical-therapy">Physical Therapy</option>
-                                <option value="occupational-therapy">Occupational Therapy</option>
-                                <option value="speech-therapy">Speech Therapy</option>
-                                <option value="personal-care">Personal Care Assistance (PAS)</option>
-                                <option value="companionship">Companionship Services</option>
-                                <option value="alzheimers">Alzheimer's/Dementia Care</option>
-                                <option value="respite">Respite Care</option>
-                                <option value="live-in">24/7 Live-In Care</option>
-                                <option value="not-sure">Not Sure / Need Guidance</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Who needs care?</label>
-                            <select name="careRecipient">
-                                <option value="">-- Select --</option>
-                                <option value="myself">Myself</option>
-                                <option value="parent">Parent or In-Law</option>
-                                <option value="spouse">Spouse or Partner</option>
-                                <option value="other-family">Other Family Member</option>
-                                <option value="friend">Friend</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>When do you need care to start?</label>
-                            <select name="startTime">
-                                <option value="">-- Select --</option>
-                                <option value="immediately">Immediately (within 48 hours)</option>
-                                <option value="this-week">This Week</option>
-                                <option value="within-month">Within 1 Month</option>
-                                <option value="planning">Just Planning Ahead</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Tell us about your needs</label>
-                            <textarea name="message" placeholder="Please describe the care needs, any medical conditions, specific assistance required, or questions you have..."></textarea>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Preferred contact method:</label>
-                            <select name="contactMethod">
-                                <option value="phone">Phone</option>
-                                <option value="email">Email</option>
-                                <option value="either">Either is fine</option>
-                            </select>
-                        </div>
-                        
-                        <button type="submit" class="btn-submit">Submit Request</button>
-                        
-                        <div class="privacy-note">
-                            🔒 <strong>Your Information is Secure:</strong> We respect your privacy. Your information is confidential and protected under HIPAA regulations. We will never share your personal information with third parties. See our <a href="privacy.html">Privacy Policy</a> and <a href="hipaa.html">HIPAA Notice</a> for details.
-                        </div>
-                    </form>
+                <div class="info-item">
+                    <div class="info-icon">✉️</div>
+                    <div class="info-content">
+                        <h3>Email</h3>
+                        <p><a href="mailto:info@globalhomehealth.org">info@globalhomehealth.org</a></p>
+                        <p style="font-size: 14px; color: var(--medium-gray);">We respond within 24 business hours</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">📍</div>
+                    <div class="info-content">
+                        <h3>Address</h3>
+                        <p><strong>Global Home Health and Durable Services</strong><br>
+                        903 Telluride Drive<br>
+                        Arlington, TX 76001</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">🏥</div>
+                    <div class="info-content">
+                        <h3>Service Area</h3>
+                        <p>Arlington, Grand Prairie, Mansfield, Fort Worth, and surrounding Tarrant County communities</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">⚡</div>
+                    <div class="info-content">
+                        <h3>Emergency Contact</h3>
+                        <p>For current clients with urgent needs after hours, call our main number and select the emergency option.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- MAP / SERVICE AREA SECTION -->
-    <section class="map-section">
-        <div class="container">
-            <div class="map-container">
-                <h2 style="color: var(--primary-navy); margin-bottom: 20px;">Our Service Area</h2>
-                <p style="margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto;">
-                    We proudly serve Arlington, TX and surrounding communities including Grand Prairie, Mansfield, 
-                    Fort Worth, Euless, Bedford, Hurst, Kennedale, and other Tarrant County areas.
-                </p>
-                <div style="background: #E8F5E9; padding: 30px; border-radius: 10px; max-width: 600px; margin: 0 auto;">
-                    <p style="font-size: 18px; color: var(--dark-gray);">
-                        <strong>Not sure if we serve your area?</strong><br>
-                        Call us at <a href="tel:6823231138" style="color: var(--primary-blue); text-decoration: none; font-weight: bold;">(682) 323-1138</a> 
-                        and we'll let you know right away!
-                    </p>
-                </div>
+            <!-- Contact Form -->
+            <div class="form-container">
+                <h2>Request Free Consultation</h2>
+                <p>Fill out the form below and we'll contact you within 24 hours to discuss your care needs.</p>
+
+                <form id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>First Name <span class="required">*</span></label>
+                            <input type="text" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name <span class="required">*</span></label>
+                            <input type="text" name="lastName" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Email <span class="required">*</span></label>
+                            <input type="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone <span class="required">*</span></label>
+                            <input type="tel" name="phone" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Zip Code</label>
+                        <input type="text" name="zipCode" maxlength="10">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Type of Service Needed <span class="required">*</span></label>
+                        <select name="serviceType" required>
+                            <option value="">-- Select Service --</option>
+                            <option value="skilled-nursing">Skilled Nursing Care (LHHS)</option>
+                            <option value="physical-therapy">Physical Therapy</option>
+                            <option value="occupational-therapy">Occupational Therapy</option>
+                            <option value="speech-therapy">Speech Therapy</option>
+                            <option value="personal-care">Personal Care Assistance (PAS)</option>
+                            <option value="companionship">Companionship Services</option>
+                            <option value="alzheimers">Alzheimer's/Dementia Care</option>
+                            <option value="respite">Respite Care</option>
+                            <option value="live-in">24/7 Live-In Care</option>
+                            <option value="not-sure">Not Sure / Need Guidance</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Who needs care?</label>
+                        <select name="careRecipient">
+                            <option value="">-- Select --</option>
+                            <option value="myself">Myself</option>
+                            <option value="parent">Parent or In-Law</option>
+                            <option value="spouse">Spouse or Partner</option>
+                            <option value="other-family">Other Family Member</option>
+                            <option value="friend">Friend</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>When do you need care to start?</label>
+                        <select name="startTime">
+                            <option value="">-- Select --</option>
+                            <option value="immediately">Immediately (within 48 hours)</option>
+                            <option value="this-week">This Week</option>
+                            <option value="within-month">Within 1 Month</option>
+                            <option value="planning">Just Planning Ahead</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Tell us about your needs</label>
+                        <textarea name="message" placeholder="Please describe the care needs, any medical conditions, specific assistance required, or questions you have..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Submit Request</button>
+
+                    <div class="privacy-note">
+                        🔒 <strong>Your Information is Secure:</strong> We respect your privacy. Your information is confidential and protected under HIPAA regulations. We will never share your personal information with third parties.
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- SERVICE AREA -->
+    <section class="service-area">
+        <div class="service-area-content">
+            <h2>Our Service Area</h2>
+            <p>We proudly serve Arlington, TX and surrounding communities including Grand Prairie, Mansfield, Fort Worth, Euless, Bedford, Hurst, Kennedale, and other Tarrant County areas.</p>
+            <div class="service-area-cta">
+                <p><strong>Not sure if we serve your area?</strong><br>
+                Call us at <a href="tel:6823231138">(682) 323-1138</a> and we'll let you know right away!</p>
             </div>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer style="background: var(--primary-navy); color: white; padding: 40px 20px; text-align: center;">
-        <div class="container">
-            <p><strong>Global Health & Durable Services</strong></p>
-            <p>Licensed Home Health & Personal Care Services</p>
-            <p style="margin-top: 15px;">903 Telluride Drive, Arlington, TX 76001</p>
-            <p>Phone: (682) 323-1138 | Email: info@globalhomehealth.org</p>
-            <p style="margin-top: 20px;">&copy; 2025 Global Health & Durable Services. All rights reserved.</p>
+    <footer class="footer">
+        <div class="footer-grid">
+            <div>
+                <h3>Global Home Health</h3>
+                <p>Professional home health and personal care services in Arlington, Texas.</p>
+                <br>
+                <p><strong>Texas HHSC Licensed</strong></p>
+            </div>
+
+            <div>
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="services.html">Skilled Nursing</a></li>
+                    <li><a href="services.html">Physical Therapy</a></li>
+                    <li><a href="services.html">Personal Care</a></li>
+                    <li><a href="services.html">Alzheimer's Care</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Contact Us</h3>
+                <ul>
+                    <li><a href="tel:6823231138">(682) 323-1138</a></li>
+                    <li><a href="mailto:info@globalhomehealth.org">info@globalhomehealth.org</a></li>
+                    <li>903 Telluride Drive<br>Arlington, TX 76001</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Global Home Health and Durable Services. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        // Form submission handling
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileToggle.textContent = navMenu.classList.contains('active') ? 'X' : '';
+        });
+
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileToggle.textContent = '';
+            });
+        });
+
+        // Form submission
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
-            // Show success message
             alert('Thank you for your request! We will contact you within 24 hours to discuss your care needs.');
-            
-            // In production, this would submit to a server
-            // For now, we'll just reset the form
             this.reset();
-            
-            // Scroll to top
             window.scrollTo({top: 0, behavior: 'smooth'});
         });
     </script>
